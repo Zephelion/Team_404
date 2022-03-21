@@ -1,0 +1,31 @@
+<main class="step">
+    <a href="/">
+        <img class="icon" src="/public/assets/icons/back.svg" alt="">
+    </a>
+
+    <section class="center">
+        <h1>Hello {{info.firstname}} what are your fitness goals?</h1>
+        <div class="button-container">
+            <form action="/register" method="post">
+
+                <input type="hidden" name="firstname" value="{{info.firstname}}">
+                <input type="hidden" name="lastname" value="{{info.lastname}}">
+                <input type="hidden" name="age" value="{{info.age}}">
+                <input type="hidden" name="email" value="{{info.email}}">
+                <input type="hidden" name="password" value="{{info.password}}">
+
+
+                <div class="goals">
+                    {{#each goals}}
+                        <input type="checkbox" id="{{title}}" name="goals" value="{{_id}}">
+                        <label class="fitness" for="{{title}}">{{title}}</label>
+                    {{/each}}
+                </div>
+                <div>
+                    <input type="submit" value="Continue">
+                </div>
+
+            </form>
+        </div>
+    </section>
+</main>

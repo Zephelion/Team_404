@@ -1,0 +1,44 @@
+main.index{
+    background-color: #0064FE;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    row-gap: 80px;
+
+    section.container{
+        background-color: white;
+        height: 90%;
+        width: 100%;
+        border-radius: 57px 57px 0px 0px;
+        opacity: 1;
+        transition: 0.4s;
+
+        section.user-container{
+            margin: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            div.user{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px;
+
+                span{
+                    font-family: 'Segoe UI';
+                    font-size: 1.2em;
+                    text-align: center;
+                }
+                div.user-img{
+                    height: 65px;
+                    width: 65px;
+                    background-color: white;
+                    border-radius: 50%;
+                    border: 2px solid $main-color;
+                }
+            }
+        }
+    }
+}   
+   

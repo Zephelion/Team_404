@@ -1,0 +1,115 @@
+main.step{
+
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+
+    a{
+        position: absolute;
+        top: 31px;
+        left: 10px;
+    }
+
+    section.center{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 70px;
+
+        h1{
+            font-family: 'Segoe UI';
+            font-weight: 400;
+            font-size: 2em;
+            text-align: center;
+        }
+        div.button-container{
+            display: flex;
+            justify-content: center;
+            height: 36%;
+            
+            form{
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 90%;
+
+                div.goals{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 26px;
+                }
+
+                label.fitness{
+                    position:relative;
+                    height:2em;
+                    padding: 0 1em;
+                    background-color:white;
+                    border: 1px solid black;
+                    border-radius:10px;
+                    padding: 15px;
+
+                    font-family: 'Segoe UI';
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                input[type=checkbox]{
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    white-space: nowrap; /* added line */
+                    border: 0;
+                }
+
+                input[type=checkbox]:checked + label.fitness {
+                    background-color: $main-color;
+                    color: white;
+                    border: 1px solid transparent;
+                }
+                
+                div:nth-child(1){
+
+                    display: flex;
+                    justify-content: space-around;
+                    gap: 30px;
+                    flex-wrap: wrap;
+
+
+                    input[type=button]{
+                        background-color: $secondary-color;
+                        padding: 25px;
+                        border: none;
+                        outline: none;
+                        font-size: 1.2em;
+                        min-width: 123px;
+                        border-radius: 9px;
+                    }
+
+                    label{
+                        font-family: 'Segoe UI';
+                    }
+
+                }
+
+                div:nth-child(2){
+                    input[type=submit]{
+                        outline: none;
+                        border: none;
+                        width: 100%;
+                    }
+                }
+
+
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "scss": "node-sass --watch scss/app.scss -o public/css --output-style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "camelcase": "^6.3.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-unless": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.2.4"
+  },
+  "devDependencies": {
+    "named-routes": "^2.0.7",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15"
+  }
+}
