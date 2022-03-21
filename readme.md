@@ -19,7 +19,7 @@
 <p>In order to use the application you first need to clone the repository. The command below will allow you to clone the repository to your local machine<p>
 
 ```
-git clone https://github.com/Zephelion/Project-Tech.git
+git clone https://github.com/Zephelion/Team_404.git
 ```
 
 <h3>:gear:.env</h3>
