@@ -5,7 +5,7 @@
 <h2>Chosen Feature</h2>
 <p>In this application we will be combining all of the chosen features from different collaborators</p>
 <ul>
-    <li>Filter feature</li>
+    <li>Filter feature <a href="https://github.com/Laserjonge" target="_blank">Axel de ruiter</a></li>
     <li>Like feature</li>
     <li>Registration feature</li>
     <li>Login feature</li>
