@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
+const bcrypt = require('bcryptjs/dist/bcrypt');
 
 const saltRounds = 10;
 
@@ -79,8 +80,27 @@ const filter = (req,res) =>{
     })
 }
 
-const register = (req,res) => {
-    console.log("wagwan people");
+const register = async (req,res) => {
+    const password = await bcrypt.hash(req.body.password, saltRounds);
+
+    const form = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        age: req.body.age,
+        email: req.body.email,
+        password: password
+    }
+
+    const user = new User(form);
+
+    user.save((error) => {
+        if (error){
+            console.log(error);
+            return res.status(500).redirect('/register')
+        }
+
+        return res.status(200).redirect('/');
+    })
 }
 
 module.exports = {
