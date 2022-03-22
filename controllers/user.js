@@ -2,6 +2,8 @@ const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 
+const saltRounds = 10;
+
 
 //functie om de user te storen in de database
 const storeUser = async (req,res) => {
@@ -37,26 +39,6 @@ const storeUser = async (req,res) => {
         userGoals.save();
 
         res.redirect('/users')
-
-
-
-
-
-
-        // user.save().then(user => {
-
-        //     console.log(user);
-        //     const user_goals = {
-        //         user:user,
-        //         goals:req.body.goals
-        //     }
-        //     console.log(user_goals)
-        //     const userGoals = new UserGoals(user_goals);
-            
-        //     userGoals.save();
-
-        //     res.redirect('/users');
-        // })
 
 
 }
@@ -97,9 +79,14 @@ const filter = (req,res) =>{
     })
 }
 
+const register = (req,res) => {
+    console.log("wagwan people");
+}
+
 module.exports = {
     store: storeUser,
     fetch: fetchUsers,
     pass: passUser,
-    filter: filter
+    filter: filter,
+    register: register
 }

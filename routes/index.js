@@ -24,7 +24,9 @@ router.get('/register', (req,res) => {
 router.get('/filter', user.filter);
 
 
-router.post('/register', user.store);
+// router.post('/register', user.store);
+
+router.post('/register', user.register);
 
 
 module.exports = router;
