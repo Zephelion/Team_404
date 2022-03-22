@@ -80,9 +80,13 @@ const filter = (req,res) =>{
     })
 }
 
+
+
 const register = async (req,res) => {
+    //hash de wachtwoord
     const password = await bcrypt.hash(req.body.password, saltRounds);
 
+    //ik zet de request in een form object
     const form = {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
@@ -91,8 +95,10 @@ const register = async (req,res) => {
         password: password
     }
 
+    //geef het form object mee en maak een nieuwe gebruiker
     const user = new User(form);
 
+    //sla de gebruiker op in de database
     user.save((error) => {
         if (error){
             console.log(error);
