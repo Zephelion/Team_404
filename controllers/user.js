@@ -39,10 +39,6 @@ const storeUser = async (req,res) => {
         res.redirect('/users')
 
 
-
-
-
-
         // user.save().then(user => {
 
         //     console.log(user);
