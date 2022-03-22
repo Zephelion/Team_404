@@ -1,6 +1,11 @@
 const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
+const bcrypt = require('bcrypt');
+
+let session = require('express-session');
+
+// let session
 
 
 //functie om de user te storen in de database
@@ -74,6 +79,8 @@ const passUser = (req,res) =>{
 }
 
 
+
+
 //pak alle users uit de database en geef die mee naar de view
 const fetchUsers = (req,res) => {
     User.find().lean().then(users => {
@@ -93,9 +100,38 @@ const filter = (req,res) =>{
     })
 }
 
+const login = async (req,res) =>{
+
+    try {
+        const checkuser = await User.findOne({
+            email: req.body.email
+        });
+        if (checkuser) {
+            const compare = await bcrypt.compare(req.body.password, checkuser.password);
+            if (compare) {
+                console.log("Inloggen voltooid!");
+                console.log(req.session.email);
+                // session = req.session
+                // session.email = req.body.email
+                // res.redirect("/users")
+            } else {
+                console.error("Foute gebruikersnaam of wachtwoord")
+                res.redirect("/")
+            }
+        } else {
+            console.error("Foute gebruikersnaam of wachtwoord")
+            res.redirect("/")
+        }
+    } catch (error) {
+        console.error(error);
+        res.redirect("/")
+    }
+}
+
 module.exports = {
     store: storeUser,
     fetch: fetchUsers,
     pass: passUser,
-    filter: filter
+    filter: filter,
+    login:login
 }

@@ -7,11 +7,21 @@ const port = 3000;
 const connectDB = require('./config/db');
 const bodyParser = require('body-parser');
 const routes = require("./routes");
+const session = require('express-session');
 
 connectDB();
 const urlEncoded = bodyParser.urlencoded({ extended: false })
 
 
+app.use(session({
+
+    secret: process.env.SESSION_SECRET,
+  
+    resave: false,
+  
+    saveUninitialized: true
+  
+}))
 
 app.engine('hbs', engine({
     extname: "hbs",
