@@ -39,7 +39,7 @@ const storeUser = async (req,res) => {
         //sla op en vervolgens een redirect
         userGoals.save();
 
-        res.redirect('/users')
+        res.redirect('/users');
 
 
 }
@@ -97,10 +97,25 @@ const register = async (req,res) => {
         if (error){
             console.log(error);
             return res.status(500).redirect('/register')
+        }else{
+            console.log("succes");
         }
-
-        return res.status(200).redirect('/');
     })
+
+
+    //zoek naar de opgeslagen user via email
+    const savedUser = await User.findOne({email: req.body.email}).lean();
+
+    //maak een nieuwe usergoals en pass de usergoals als object mee
+    const userGoals = new UserGoals({
+        goals: req.body.goals,
+        user:  savedUser, 
+    })
+
+    //sla op en vervolgens een redirect
+    userGoals.save();
+
+    res.redirect('/users');
 }
 
 module.exports = {
