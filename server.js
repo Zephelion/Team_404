@@ -10,7 +10,7 @@ const routes = require("./routes");
 const session = require('express-session');
 
 connectDB();
-const urlEncoded = bodyParser.urlencoded({ extended: false })
+const urlEncoded = bodyParser.urlencoded({ extended: true })
 
 
 app.use(session({
@@ -32,6 +32,7 @@ app.set('view engine', 'hbs');
 app.set('views', './views');
 app.use('/public', express.static("public"));
 app.use('/', urlEncoded , routes);
+
 
 
 app.listen(port, () => {
