@@ -13,17 +13,21 @@ main.index{
 
     nav{
         menu{
-            button.settings-button{
-                font-family: "icons-font_axeleration", sans-serif;
-                font-size: 2em;
-                color: #ffffff;
-                background: none;
-                border: none;
-                cursor: pointer;
-                position: fixed;
-                top: 0.4em;
-                right: .5em;
-                z-index: 3;
+            li{
+                list-style: none;
+
+                button.settings-button{
+                    font-family: "icons-font_axeleration", sans-serif;
+                    font-size: 2em;
+                    color: #ffffff;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    position: fixed;
+                    top: 0.4em;
+                    right: .5em;
+                    z-index: 3;
+                }
             }
         }
     }

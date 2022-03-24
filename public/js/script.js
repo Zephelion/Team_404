@@ -1,6 +1,15 @@
+///////////////
+// CONSTANTS //
+///////////////
 const signIn = document.getElementById('secondary');
 const section = document.querySelector('.options');
 const signUp = document.querySelector('.signup');
+const settingsButton = document.querySelector(".settings-button");
+
+
+//////////////////////////////////////////
+// !!!FUNTION THAT GIVES ME AN ERROR!!! //
+//////////////////////////////////////////
 
 // console.log(signIn);
 
@@ -10,11 +19,25 @@ const signUp = document.querySelector('.signup');
 //     console.log("nu moet de section moven");
 // })
 
+
 ////////////////////////
 // Filter pop-up menu //
 ////////////////////////
-const settingsButton = document.querySelector(".settings-button");
-
 settingsButton.addEventListener("click", toggleMenu = () => document.querySelector(".pop-up-form").classList.toggle("pop-up-function"));
 
-// settingsButton.addEventListener("click", console.log("hi"));
+
+/////////////////////////////////
+// FILTERING WITH LOCALSTORAGE //
+/////////////////////////////////
+const radioButtons = document.querySelectorAll(".radio-button")
+
+radioButtons.forEach(function(radioButton){
+
+	radioButton.addEventListener("click", function(e){
+		// console.log(e.target.value);
+		localStorage.clear();
+		localStorage.setItem("preference", e.target.value);
+	})
+})
+
+console.log(localStorage);
