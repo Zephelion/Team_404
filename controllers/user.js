@@ -78,12 +78,24 @@ const passUser = (req,res) =>{
 }
 
 
+// //pak alle users uit de database en geef die mee naar de view
+// const fetchUsers = (req,res) => {
+//     User.find().lean().then(users => {
+
+//         // console.log(users);
+//         res.render('userindex', {
+//             users:users,
+//         })
+//     })
+// }
+
+
 //pak alle users uit de database en geef die mee naar de view
 const fetchUsers = (req,res) => {
     User.find().lean().then(users => {
 
         // console.log(users);
-        res.render('userindex', {
+        res.render('userslist', {
             users:users,
         })
     })

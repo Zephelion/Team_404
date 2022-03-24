@@ -13,7 +13,9 @@ router.get('/', (req,res,) => {
 
 //hier import ik de usercontroller en de benodigde functies die ik daarin heb geschreven
 
-router.get('/users', user.fetch);
+// router.get('/users', user.fetch);
+
+router.get('/list', user.fetch);
 
 router.get('/create', user.pass);
 

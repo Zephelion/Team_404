@@ -1,103 +1,100 @@
-@import 'variables';
-@import 'start';
-@import 'font';
-@import 'register';
-@import 'step';
-@import 'user';
+@import "variables";
+@import "start";
+@import "font";
+@import "register";
+@import "step";
+@import "user";
+@import "like";
 
-body{
-    margin: 0;
-    padding: 0;
-
+body {
+  margin: 0;
+  padding: 0;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-a#secondary{
-    background-color: $secondary-color;
-    color: $main-color;
+a#secondary {
+  background-color: $secondary-color;
+  color: $main-color;
 }
 
-h1{
-    margin: 0;
+h1 {
+  margin: 0;
 }
 
-h2{
-    margin: 0;
-    
+h2 {
+  margin: 0;
 }
 
-label.mobile-register{
-    display: none;
+label.mobile-register {
+  display: none;
 }
 
-input[type=text]{
-    border: 1px solid #cdd4d9;
-    // padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 23px;
-    border-radius: 8px;
-    font-size: 17px;
-    margin-top: 13px;
-    outline: none;
+input[type="text"] {
+  border: 1px solid #cdd4d9;
+  // padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 23px;
+  border-radius: 8px;
+  font-size: 17px;
+  margin-top: 13px;
+  outline: none;
 }
 
-input[type=email]{
-    border: 1px solid #cdd4d9;
-    // padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 23px;
-    border-radius: 8px;
-    font-size: 17px;
-    margin-top: 13px;
-    outline: none;
+input[type="email"] {
+  border: 1px solid #cdd4d9;
+  // padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 23px;
+  border-radius: 8px;
+  font-size: 17px;
+  margin-top: 13px;
+  outline: none;
 }
 
-input[type=password]{
-    border: 1px solid #cdd4d9;
-    // padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 23px;
-    border-radius: 8px;
-    font-size: 17px;
-    margin-top: 13px;
-    outline: none;
-    
+input[type="password"] {
+  border: 1px solid #cdd4d9;
+  // padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 23px;
+  border-radius: 8px;
+  font-size: 17px;
+  margin-top: 13px;
+  outline: none;
 }
 
-input[type=number]{
-    border: 1px solid #cdd4d9;
-    // padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 23px;
-    border-radius: 8px;
-    font-size: 17px;
-    margin-top: 13px;
-    outline: none;
+input[type="number"] {
+  border: 1px solid #cdd4d9;
+  // padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 23px;
+  border-radius: 8px;
+  font-size: 17px;
+  margin-top: 13px;
+  outline: none;
 }
 
-input[type=submit]{
-    border: 1px solid #cdd4d9;
-    // padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 23px;
-    border-radius: 8px;
-    font-size: 17px;
-    margin-top: 13px;
-    outline: none;
+input[type="submit"] {
+  border: 1px solid #cdd4d9;
+  // padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 23px;
+  border-radius: 8px;
+  font-size: 17px;
+  margin-top: 13px;
+  outline: none;
 }
 
-form{
-    input[type=submit]{
-        background-color: $main-color;
-        color: white;
-        
-    }
+form {
+  input[type="submit"] {
+    background-color: $main-color;
+    color: white;
+  }
 }
