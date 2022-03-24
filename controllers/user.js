@@ -113,7 +113,7 @@ const login = async (req,res) =>{
         console.error(error);
         res.redirect("/")
     }
-=======
+}
 
 
 const register = async (req,res) => {
