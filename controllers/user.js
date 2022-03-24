@@ -97,6 +97,14 @@ const filter = (req,res) =>{
     })
 }
 
+const transport = nodemailer.createTransport("SMTP", {
+    service: "hotmail",
+    auth: {
+        user: "fitbudtest@outlook.com",
+        pass: "nodemailtest1"
+    }
+});
+
 module.exports = {
     store: storeUser,
     fetch: fetchUsers,
