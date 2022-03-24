@@ -1,6 +1,15 @@
 <main class="index">
+
+    <nav>
+        <menu>
+            <li><button class="settings-button">A</button></li>
+        </menu>
+    </nav>
+
     <section class="container">
+
         <section class="user-container">
+
             {{#each users}}
                 <div class="user">
                     <div class="user-img"></div>
@@ -10,4 +19,34 @@
             
         </section>
     </section>
+
+    <form class="pop-up-form" class="pop-up-function" method="POST" action="/inloggen">
+        <p>Voertuig:</p>
+        <div>
+        <input type="radio" id="auto" name="vehicle" value="auto"/>
+        <label for="auto">Auto</label>
+        </div>
+        <div>
+        <input type="radio" id="motor" name="vehicle" value="motor"/>
+        <label for="motor">Motor</label>
+        </div>
+        <div>
+        <input type="radio" id="scooter" name="vehicle" value="scooter"/>
+        <label for="scooter">Scooter</label>
+        </div>
+
+        <p>Geslacht:</p>
+        <div>
+            <input type="radio" id="man" name="gender" value="man"/>
+            <label for="man">Man</label>
+        </div>
+        <div>
+            <input type="radio" id="vrouw" name="gender" value="vrouw"/>
+            <label for="vrouw">Vrouw</label>
+        </div>
+        <div>
+            <input class="save-button" type="submit" value="Opslaan"/>
+        </div>
+    </form>
+
 </main>
