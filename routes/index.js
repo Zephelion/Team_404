@@ -27,7 +27,14 @@ router.get('/filter', user.filter);
 
 router.post('/register', user.store);
 
+// Transport de mail
+transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
+    }
 
+    console.log('Message sent: ' + info.response);
+});
 
 
 
