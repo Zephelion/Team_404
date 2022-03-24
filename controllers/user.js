@@ -105,6 +105,14 @@ const transport = nodemailer.createTransport("SMTP", {
     }
 });
 
+const mailOptions = {
+    from: '"Our Code World " fitbudtest@outlook.com', // sender address (who sends)
+    to: 'daanhoning@kpnmail.nl', // list of receivers (who receives)
+    subject: 'Fitbud!', // Subject line
+    text: 'Welkom bij fitbud! Je personal fitbuddy finder! Hier kan je een sportmaatje voor het leven vinden!', // plaintext body
+    html: '' // html body
+};
+
 module.exports = {
     store: storeUser,
     fetch: fetchUsers,
