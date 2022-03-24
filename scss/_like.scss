@@ -4,12 +4,12 @@ main .index {
 
 .popUp {
   height: 50vh;
-  position: absolute;
+  position: fixed;
   width: 50vw;
   top: 5em;
   left: 7em;
   border: 2px solid #000000;
-  background-color: #0064fe;
+  background-color: $main-color;
   border-radius: 57px;
 
   span {
