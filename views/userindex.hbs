@@ -20,32 +20,41 @@
         </section>
     </section>
 
-    <form class="pop-up-form" class="pop-up-function" method="POST" action="/inloggen">
-        <p>Voertuig:</p>
-        <div>
-        <input type="radio" id="auto" name="vehicle" value="auto"/>
-        <label for="auto">Auto</label>
-        </div>
-        <div>
-        <input type="radio" id="motor" name="vehicle" value="motor"/>
-        <label for="motor">Motor</label>
-        </div>
-        <div>
-        <input type="radio" id="scooter" name="vehicle" value="scooter"/>
-        <label for="scooter">Scooter</label>
+    <form class="pop-up-form" class="pop-up-function">
+        <p>What kind of Fitbuddies are you looking for?</p>
+        
+        <div class="radio-button">
+            <input type="radio" id="cardio" name="preference" value="cardio"/>
+            <label for="cardio">Cardio</label>
         </div>
 
-        <p>Geslacht:</p>
-        <div>
-            <input type="radio" id="man" name="gender" value="man"/>
-            <label for="man">Man</label>
+        <div class="radio-button">
+            <input type="radio" id="weightloss" name="preference" value="weightloss"/>
+            <label for="weightloss">Weightloss</label>
         </div>
-        <div>
-            <input type="radio" id="vrouw" name="gender" value="vrouw"/>
-            <label for="vrouw">Vrouw</label>
+
+        <div class="radio-button">
+            <input type="radio" id="muscle-gain" name="preference" value="muscle-gain"/>
+            <label for="muscle-gain">Muscle gain</label>
         </div>
+
+        <div class="radio-button">
+            <input type="radio" id="mobility" name="preference" value="mobility"/>
+            <label for="mobility">Mobility</label>
+        </div>
+
+        <div class="radio-button">
+            <input type="radio" id="flexibility" name="preference" value="flexibility"/>
+            <label for="flexibility">Flexibility</label>
+        </div>
+
+        <div class="radio-button">
+            <input type="radio" id="strength-gain" name="preference" value="strength-gain"/>
+            <label for="strength-gain">Strength gain</label>
+        </div>
+
         <div>
-            <input class="save-button" type="submit" value="Opslaan"/>
+            <input class="save-button" type="submit" value="Save"/>
         </div>
     </form>
 
