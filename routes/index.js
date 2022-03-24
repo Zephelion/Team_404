@@ -24,7 +24,7 @@ router.get('/register', (req,res) => {
 
 //page not found
 router.get("*", (req, res) => {
-    res.send("Not found");
+    res.render('404');
 });
 
 router.get('/filter', user.filter);

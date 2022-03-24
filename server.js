@@ -33,8 +33,6 @@ app.set('views', './views');
 app.use('/public', express.static("public"));
 app.use('/', urlEncoded , routes);
 
-
-
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
