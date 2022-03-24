@@ -2,22 +2,37 @@ const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 
+//multer invoegen
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./public/uploads");
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + "-" + Date.now() + file.originalname);
+  },
+});
+
+//afbeeldingen kunnen toevoegen
+const upload = multer({ storage: storage });
 
 //functie om de user te storen in de database
-const storeUser = async (req,res) => {
-
+const storeUser = (upload.single('picture'), async (req,res) => {
+    console.log(req.file);
+    console.log(req.body);
         //zet de req in een object
         const form = {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             age: req.body.age,
+            picture: req.file.filename,
             email: req.body.email,
             password: req.body.password,
         }
 
         //maak een nieuwe user en geef de form object mee als parameter
         const user = new User(form);
-        
+        console.log(User);
         //sla op aan het einde
         user.save(function(err){
             
@@ -59,7 +74,7 @@ const storeUser = async (req,res) => {
         // })
 
 
-}
+})
 
 
 //geef de user mee naar de volgende view om de data daar te kunnen gebruiken
