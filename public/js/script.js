@@ -3,17 +3,24 @@ const section = document.querySelector('.options');
 const signUp = document.querySelector('.signup');
 
 const users = document.querySelectorAll('.user');
-const nameOfUser = document.querySelector('span')
+const userName = document.querySelector('.pop-up span');
+const user = document.querySelector('.user');
+const popUp = document.querySelector('.pop-up');
+
 
 users.forEach(user => {
     user.addEventListener('click', (e) => {
-        console.log(e.currentTarget);
+        console.log(e.currentTarget.innerText);
 
-        
-        user.contains(nameOfUser.currentTarget);
-        console.log(nameOfUser.innerText)
+        // name of clicked user comes on pop-up
+        userName.innerText = e.currentTarget.innerText;
     })
 })
+
+user.addEventListener('click', (e) => {
+    popUp.classList.toggle("popUp");
+})
+
 
 signIn.addEventListener('click', () => {
     section.classList.add('move');
