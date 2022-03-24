@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs/dist/bcrypt');
 const saltRounds = 10;
 
 
-//functie om de user te storen in de database
+//functie om de user te storen in de database (oude manier)
 const storeUser = async (req,res) => {
 
         //zet de req in een object
@@ -40,8 +40,6 @@ const storeUser = async (req,res) => {
         userGoals.save();
 
         res.redirect('/users');
-
-
 }
 
 
