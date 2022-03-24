@@ -101,3 +101,16 @@ main.start{
         }
     }
 }
+
+.errormelding {
+    background: rgba(243, 8, 0, 0.986);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(247, 1, 1, 0.932);
+    border-radius: 0.5em;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 1em !important;
+  }
