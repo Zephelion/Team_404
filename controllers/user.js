@@ -3,10 +3,14 @@ const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 const bcrypt = require('bcrypt');
 
+
 let session
 
 
-//functie om de user te storen in de database
+const saltRounds = 10;
+
+
+//functie om de user te storen in de database (oude manier)
 const storeUser = async (req,res) => {
 
         //zet de req in een object
@@ -39,25 +43,7 @@ const storeUser = async (req,res) => {
         //sla op en vervolgens een redirect
         userGoals.save();
 
-        res.redirect('/users')
-
-
-        // user.save().then(user => {
-
-        //     console.log(user);
-        //     const user_goals = {
-        //         user:user,
-        //         goals:req.body.goals
-        //     }
-        //     console.log(user_goals)
-        //     const userGoals = new UserGoals(user_goals);
-            
-        //     userGoals.save();
-
-        //     res.redirect('/users');
-        // })
-
-
+        res.redirect('/users');
 }
 
 
@@ -98,6 +84,7 @@ const filter = (req,res) =>{
     })
 }
 
+
 const login = async (req,res) =>{
     
     try {
@@ -126,6 +113,50 @@ const login = async (req,res) =>{
         console.error(error);
         res.redirect("/")
     }
+=======
+
+
+const register = async (req,res) => {
+    //hash de wachtwoord
+    const password = await bcrypt.hash(req.body.password, saltRounds);
+
+    //ik zet de request in een form object
+    const form = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        age: req.body.age,
+        email: req.body.email,
+        password: password
+    }
+
+    //geef het form object mee en maak een nieuwe gebruiker
+    const user = new User(form);
+
+    //sla de gebruiker op in de database
+    user.save((error) => {
+        if (error){
+            console.log(error);
+            return res.status(500).redirect('/register')
+        }else{
+            console.log("succes");
+        }
+    })
+
+
+    //zoek naar de opgeslagen user via email
+    const savedUser = await User.findOne({email: req.body.email}).lean();
+
+    //maak een nieuwe usergoals en pass de usergoals als object mee
+    const userGoals = new UserGoals({
+        goals: req.body.goals,
+        user:  savedUser, 
+    })
+
+    //sla op en vervolgens een redirect
+    userGoals.save();
+
+    res.redirect('/users');
+
 }
 
 module.exports = {
@@ -133,5 +164,7 @@ module.exports = {
     fetch: fetchUsers,
     pass: passUser,
     filter: filter,
-    login:login
+    login:login,
+    register: register
+
 }

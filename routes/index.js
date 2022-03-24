@@ -22,11 +22,21 @@ router.get('/register', (req,res) => {
 })
 
 
+//page not found
+router.get("*", (req, res) => {
+    res.send("Not found");
+});
+
+router.get('/filter', user.filter);
+
+
 router.post('/login', user.login);
 
 router.get('/filter', user.filter);
 
-router.post('/register', user.store);
+// router.post('/register', user.store);
+
+router.post('/register', user.register);
 
 
 module.exports = router;
