@@ -11,11 +11,6 @@ router.get('/', (req,res,) => {
 
 });
 
-//page not found
-app.get("*", (req, res) => {
-    res.send("Not found");
-});
-
 //hier import ik de usercontroller en de benodigde functies die ik daarin heb geschreven
 
 router.get('/users', user.fetch);
@@ -25,6 +20,11 @@ router.get('/create', user.pass);
 router.get('/register', (req,res) => {
     res.render('register');
 })
+
+//page not found
+router.get("*", (req, res) => {
+    res.send("Not found");
+});
 
 router.get('/filter', user.filter);
 
