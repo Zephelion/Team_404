@@ -1,7 +1,7 @@
 const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
-const bcrypt = require('bcryptjs/dist/bcrypt');
+const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
 
