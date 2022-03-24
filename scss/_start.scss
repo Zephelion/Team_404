@@ -1,3 +1,7 @@
+body {
+    font-family: 'segoe';
+}
+
 main.start{
     background-color: $main-color;
     height: 100vh;
@@ -9,18 +13,17 @@ main.start{
 
     div.welcome{
 
-        h1.welcome-message{
+        img.logo{
+            display: flex;
+            justify-content: center;
             color: white;
-            font-family: 'Segoe UI';
-            font-weight: 100;
             text-align: center;
-            width: 41%;
+            width: 40%;
             margin: auto;
         }
 
         h2{
             color: white;
-            font-family: 'Segoe UI';
             font-weight: 100;
             text-align: center;
         }
@@ -55,7 +58,6 @@ main.start{
             a{
                 color: white;
                 background-color: $main-color;
-                font-family: 'Segoe UI';
                 padding: 20px;
                 margin: 10px;
                 border-radius: 5px;
@@ -83,7 +85,6 @@ main.start{
             }
 
             a{
-                font-family: 'Segoe UI';
                 text-align: center;
                 display: flex;
                 justify-content: center;
@@ -95,7 +96,6 @@ main.start{
 
         p{
             color: #00000085;
-            font-family: 'Segoe UI';
             font-size: 0.9em;
             text-align: center;
         }

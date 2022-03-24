@@ -3,6 +3,10 @@ const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 const bcrypt = require('bcrypt');
 
+
+let session
+
+
 const saltRounds = 10;
 
 
@@ -59,6 +63,8 @@ const passUser = (req,res) =>{
 }
 
 
+
+
 //pak alle users uit de database en geef die mee naar de view
 const fetchUsers = (req,res) => {
     User.find().lean().then(users => {
@@ -78,6 +84,36 @@ const filter = (req,res) =>{
     })
 }
 
+
+const login = async (req,res) =>{
+    
+    try {
+        const checkuser = await User.findOne({
+            email: req.body.email
+        });
+        if (checkuser) {
+            const compare = await bcrypt.compare(req.body.password, checkuser.password);
+            if (compare) {
+                session = req.session
+                
+                session.email = req.body.email
+
+                console.log("Inloggen voltooid!");
+                res.redirect("/users");
+
+            } else {
+                console.error("Foute gebruikersnaam of wachtwoord")
+                res.redirect("/")
+            }
+        } else {
+            console.error("Foute gebruikersnaam of wachtwoord")
+            res.redirect("/")
+        }
+    } catch (error) {
+        console.error(error);
+        res.redirect("/")
+    }
+=======
 
 
 const register = async (req,res) => {
@@ -120,6 +156,7 @@ const register = async (req,res) => {
     userGoals.save();
 
     res.redirect('/users');
+
 }
 
 module.exports = {
@@ -127,5 +164,7 @@ module.exports = {
     fetch: fetchUsers,
     pass: passUser,
     filter: filter,
+    login:login,
     register: register
+
 }
