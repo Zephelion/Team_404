@@ -21,7 +21,8 @@
     "express-unless": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "mongoose": "^6.2.4"
+    "mongoose": "^6.2.4",
+    "multer": "^1.4.4"
   },
   "devDependencies": {
     "named-routes": "^2.0.7",
