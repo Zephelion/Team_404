@@ -25,7 +25,7 @@ const storeUser = (upload.single('picture'), async (req,res) => {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             age: req.body.age,
-            picture: req.file.filename,
+            picture: req.file,
             email: req.body.email,
             password: req.body.password,
         }
