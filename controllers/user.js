@@ -133,29 +133,29 @@ const register = async (req,res) => {
     const user = new User(form);
 
     //sla de gebruiker op in de database
-    user.save((error) => {
+    user.save(async (error) => {
         if (error){
             console.log(error);
             return res.status(500).redirect('/register')
         }else{
             console.log("succes");
+
+            //zoek naar de opgeslagen user via email
+            const savedUser = await User.findOne({email: req.body.email}).lean();
+
+            //maak een nieuwe usergoals en pass de usergoals als object mee
+            const userGoals = new UserGoals({
+                goals: req.body.goals,
+                user:  savedUser, 
+            })
+
+            //sla op en vervolgens een redirect
+            userGoals.save();
+
+            res.redirect('/users');
+
         }
     })
-
-
-    //zoek naar de opgeslagen user via email
-    const savedUser = await User.findOne({email: req.body.email}).lean();
-
-    //maak een nieuwe usergoals en pass de usergoals als object mee
-    const userGoals = new UserGoals({
-        goals: req.body.goals,
-        user:  savedUser, 
-    })
-
-    //sla op en vervolgens een redirect
-    userGoals.save();
-
-    res.redirect('/users');
 
 }
 
