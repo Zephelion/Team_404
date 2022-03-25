@@ -39,5 +39,23 @@ main.index{
             }
         }
     }
+
+    div.filter-button{
+        background-color: white;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 30px;
+        right: 15px;
+        box-shadow: 2px 4px 16px -7px grey;
+        display: flex;
+        justify-content: center;
+
+        img.filter-icon{
+            width: 50%;
+            transform: rotate(90deg);
+        }
+    }
 }   
    
