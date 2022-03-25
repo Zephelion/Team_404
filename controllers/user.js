@@ -6,7 +6,7 @@ const UserGoals = require('../models/UserGoal');
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "./public/uploads");
+    cb(null,  "../public/uploads");
   },
   filename: function (req, file, callback) {
     callback(null, file.fieldname + "-" + Date.now() + file.originalname);
@@ -14,64 +14,47 @@ const storage = multer.diskStorage({
 });
 
 //afbeeldingen kunnen toevoegen
-const upload = multer({ storage: storage });
+const upload = multer({storage: storage});
+
 
 //functie om de user te storen in de database
-const storeUser = (upload.single('picture'), async (req,res) => {
-    console.log(req.file);
-    console.log(req.body);
+const storeUser = (upload.single('picture'),  (req,res) => {
+        console.log(req.filename)
         //zet de req in een object
-        const form = {
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            age: req.body.age,
-            picture: req.file,
-            email: req.body.email,
-            password: req.body.password,
-        }
+        // const form = {
+        //     firstname: req.body.firstname,
+        //     lastname: req.body.lastname,
+        //     age: req.body.age,
+        //     picture: req.body.picture,
+        //     email: req.body.email,
+        //     password: req.body.password,
+        // }
 
-        //maak een nieuwe user en geef de form object mee als parameter
-        const user = new User(form);
-        console.log(User);
-        //sla op aan het einde
-        user.save(function(err){
+        // // //maak een nieuwe user en geef de form object mee als parameter
+        // const user = new User(form);
+        // //sla op aan het einde
+        // user.save(function(err){
             
  
-        })
+        // })
 
-        //zoek naar de opgeslagen user via email
-        const savedUser = await User.findOne({email: req.body.email}).lean();
+        // res.redirect('/users');
 
-        //maak een nieuwe usergoals en pass de usergoals als object mee
-        const userGoals = new UserGoals({
-            goals: req.body.goals,
-            user:  savedUser, 
-        })
+        // //zoek naar de opgeslagen user via email
+        // const savedUser = await User.findOne({email: req.body.email}).lean();
+
+        // //maak een nieuwe usergoals en pass de usergoals als object mee
+        // const userGoals = new UserGoals({
+        //     goals: req.body.goals,
+        //     user:  savedUser, 
+        // })
 
         //sla op en vervolgens een redirect
-        userGoals.save();
+        // userGoals.save();
 
-        res.redirect('/users')
-
-
+        // res.redirect('/users')
 
 
-
-
-        // user.save().then(user => {
-
-        //     console.log(user);
-        //     const user_goals = {
-        //         user:user,
-        //         goals:req.body.goals
-        //     }
-        //     console.log(user_goals)
-        //     const userGoals = new UserGoals(user_goals);
-            
-        //     userGoals.save();
-
-        //     res.redirect('/users');
-        // })
 
 
 })
