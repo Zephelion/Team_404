@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
+const nodemailer = require("nodemailer");
 
 
 //functie om de user te storen in de database
@@ -19,6 +20,7 @@ const storeUser = async (req,res) => {
         const user = new User(form);
         
         //sla op aan het einde
+        main().catch(console.log);
         user.save(function(err){
             
  
@@ -97,22 +99,30 @@ const filter = (req,res) =>{
     })
 }
 
-const transport = nodemailer.createTransport("SMTP", {
-    service: "hotmail",
-    auth: {
-        user: "fitbudtest@outlook.com",
-        pass: "nodemailtest1"
-    }
-});
+async function main() {
+    let testAccount = await nodemailer.createTestAccount();
 
-const mailOptions = {
-    from: '"Our Code World " fitbudtest@outlook.com', // sender address (who sends)
-    to: 'daanhoning@kpnmail.nl', // list of receivers (who receives)
-    subject: 'Fitbud!', // Subject line
-    text: 'Welkom bij fitbud! Je personal fitbuddy finder! Hier kan je een sportmaatje voor het leven vinden!', // plaintext body
-    html: '' // html body
-};
+    let transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: testAccount.user, // generated ethereal user
+          pass: testAccount.pass, // generated ethereal password
+        },
+      });
 
+      let info = await transporter.sendMail({
+        from: '"Fitbud!" <fitbudtest@outlook.com>', // sender address
+        to: "daanhoning@kpnmail.nl", // list of receivers
+        subject: "Registratie succeeded!", // Subject line
+        text: "Welcome to fitbud! Find your fitbuddy on our platform!", // plain text body
+        html: "<b>Welcome to fitbud! Find your fitbuddy on our platform!</b>", // html body
+      });
+
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+}
 module.exports = {
     store: storeUser,
     fetch: fetchUsers,
