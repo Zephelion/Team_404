@@ -76,14 +76,6 @@ const fetchUsers = (req,res) => {
     })
 }
 
-const filter = (req,res) =>{
-    const age = '21';
-
-    User.find({age: age}, function(err,doc){
-        console.log(doc);
-    })
-}
-
 
 const login = async (req,res) =>{
     
@@ -157,6 +149,14 @@ const register = async (req,res) => {
         }
     })
 
+}
+
+const filter = (req,res) =>{
+    const age = '21';
+
+    User.find({age: age}, function(err,doc){
+        console.log(doc);
+    })
 }
 
 module.exports = {
