@@ -152,7 +152,7 @@ const register = async (req,res) => {
 }
 
 const filter = (req,res) =>{
-    const goal = '622f33bbb55bbefe4f1db27d';
+    const goal = '622f33cbb55bbefe4f1db27e';
 
     UserGoals.find({goals: goal}).populate('user').lean().then((usergoal) => {
         res.render('filter', {
