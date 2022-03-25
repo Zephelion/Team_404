@@ -95,6 +95,7 @@ const filter = (req,res) =>{
     User.find({age: age}, function(err,doc){
         console.log(doc);
     })
+
 }
 
 module.exports = {
