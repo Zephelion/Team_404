@@ -152,10 +152,12 @@ const register = async (req,res) => {
 }
 
 const filter = (req,res) =>{
-    const age = '21';
+    const goal = '622f33bbb55bbefe4f1db27d';
 
-    User.find({age: age}, function(err,doc){
-        console.log(doc);
+    UserGoals.find({goals: goal}).populate('user').lean().then((usergoal) => {
+        res.render('filter', {
+            usergoals:usergoal,
+        })
     })
 }
 
