@@ -151,13 +151,28 @@ const register = async (req,res) => {
 
 }
 
-const filter = (req,res) =>{
-    const goal = '622f33cbb55bbefe4f1db27e';
+const filter = async (req,res) =>{
+
+    // console.log(req.body.goals);
+
+    const goal = '622f3399b55bbefe4f1db27b';
+
+    const goals = await Goals.find().lean();
 
     UserGoals.find({goals: goal}).populate('user').lean().then((usergoal) => {
+            
         res.render('filter', {
             usergoals:usergoal,
+            goals: goals,
         })
+    })
+}
+
+const filteredUser = (req,res) => {
+    const goal = req.query.goals
+    
+    UserGoals.find({goals: goal}).populate('user').lean().then(usergoal => {
+        console.log(usergoal)
     })
 }
 
@@ -167,6 +182,7 @@ module.exports = {
     pass: passUser,
     filter: filter,
     login:login,
-    register: register
+    register: register,
+    filtereduser: filteredUser,
 
 }
