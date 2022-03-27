@@ -1,4 +1,20 @@
 <main class="index">
+
+    <section class="filter-container">
+        <form action="/filteruser" method="get">
+            <div class="goals">
+                {{#each goals}}
+                    <input type="checkbox" id="{{title}}" name="goals" value="{{_id}}">
+                    <label class="fitness" for="{{title}}">{{title}}</label>
+                {{/each}}
+            </div>
+
+            <input type="submit" value="Apply">
+        </form>
+    </section>
+
+
+
     <section class="container">
         <section class="user-container">
             {{#each usergoals}}
@@ -14,3 +30,4 @@
         <img class="filter-icon" src="/public/assets/icons/filter.svg" alt="">
     </div>
 </main>
+<script src="/public/js/userindex.js"></script>
