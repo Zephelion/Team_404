@@ -17,7 +17,7 @@ main.step{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 70px;
+        gap: 30px;
 
         h1{
             font-family: 'Segoe UI';
@@ -25,6 +25,15 @@ main.step{
             font-size: 2em;
             text-align: center;
         }
+
+        h2{
+            font-family: 'Segoe UI';
+            font-weight: 400;
+            font-size: 1em;
+            text-align: center;
+            color: gray;
+        }
+
         div.button-container{
             display: flex;
             justify-content: center;
@@ -32,7 +41,7 @@ main.step{
             
             form{
 
-                display: flex;
+                // display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 width: 90%;
