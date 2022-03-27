@@ -5,15 +5,16 @@
 
     <section class="center">
         <h1>Hello {{info.firstname}} what are your fitness goals?</h1>
+        <h2>you may also upload a profile picture if you like.</h2>
         <div class="button-container">
-            <form action="/register" method="post">
+            <form action="/register" method="post" enctype="multipart/form-data">
 
                 <input type="hidden" name="firstname" value="{{info.firstname}}">
                 <input type="hidden" name="lastname" value="{{info.lastname}}">
                 <input type="hidden" name="age" value="{{info.age}}">
                 <input type="hidden" name="email" value="{{info.email}}">
                 <input type="hidden" name="password" value="{{info.password}}">
-                <input type="hidden" name="picture" id="picture" value="{{info.picture}}">
+                <input type="file" name="picture" id="picture">
 
                 <div class="goals">
                     {{#each goals}}
