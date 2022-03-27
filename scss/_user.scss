@@ -6,6 +6,59 @@ main.index{
     justify-content: end;
     row-gap: 80px;
 
+
+    section.filter-container{
+        background-color: $main-color;
+        height: 60vh;
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        border-radius: 20px;
+        transform: translateY(511px);
+        transition: 0.4s;
+
+        form{
+            margin: 20px;
+
+            div.goals{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 26px;
+
+                label.fitness{
+                    position:relative;
+                    height:2em;
+                    padding: 0 1em;
+                    background-color: $secondary-color;
+                    border-radius:10px;
+                    padding: 15px;
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                input[type=checkbox]:checked + label.fitness {
+                    background-color: $main-color;
+                    border: 1px solid white;
+                    color: white;
+                }
+    
+                input[type=submit]{
+                    background-color: white;
+                    color: black;
+                }
+            }
+
+
+        }
+
+        &.filter-up{
+            transform: translateY(12px);
+        }
+    }
+
+
     section.container{
         background-color: white;
         height: 90%;
@@ -42,8 +95,8 @@ main.index{
 
     div.filter-button{
         background-color: white;
-        width: 85px;
-        height: 85px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         position: fixed;
         bottom: 30px;
