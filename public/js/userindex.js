@@ -8,7 +8,6 @@ const displayUsers = (data) =>{
 
     userContainer.innerHTML = "";
     data.forEach(match => {
-        // console.log(match.user);
         const user = match.user;
         let html = `<div class="user">
                 <div class="user-img"></div>
