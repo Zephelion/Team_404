@@ -1,7 +1,7 @@
 <main class="index">
 
     <section class="filter-container">
-        <form action="/filteruser" method="get">
+        <form class="filter-form" action="/filteruser">
             <div class="goals">
                 {{#each goals}}
                     <input type="checkbox" id="{{title}}" name="goals" value="{{_id}}">

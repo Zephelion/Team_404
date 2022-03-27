@@ -28,7 +28,7 @@ router.get('/register', (req,res) => {
 
 router.get('/filter', user.filter);
 
-router.get('/filteruser', user.filtereduser);
+router.post('/filteruser', user.filtereduser);
 
 
 router.post('/login', user.login);

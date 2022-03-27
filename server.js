@@ -13,6 +13,7 @@ connectDB();
 const urlEncoded = bodyParser.urlencoded({ extended: true })
 
 
+app.use(bodyParser.json());
 app.use(session({
 
     secret: process.env.SESSION_SECRET,

@@ -2,6 +2,8 @@ const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 const bcrypt = require('bcrypt');
+const axios = require('axios');
+const { default: mongoose } = require('mongoose');
 
 
 let session
@@ -168,12 +170,24 @@ const filter = async (req,res) =>{
     })
 }
 
-const filteredUser = (req,res) => {
-    const goal = req.query.goals
+const filteredUser = async (req,res) => {
+
+    console.log(req.body);
+
+    const goal = req.body.goals;
     
     UserGoals.find({goals: goal}).populate('user').lean().then(usergoal => {
-        console.log(usergoal)
+        res.send(usergoal);
     })
+
+    // const usergoals = await UserGoals.find({ '_id': { $in: req.body.goals } }).populate('user').lean().then(data => {
+    //     console.log(data);
+    // });
+
+    // console.log(usergoals);
+    // const goal = req.query.goals
+
+
 }
 
 module.exports = {
