@@ -11,11 +11,11 @@
 
 <h2>About fitbud</h2>
 <p>Fitbud is a matching application where sport lovers can come together and train with each other. The application makes it very easy for users with similiar fitness background or goals to come together and have an effective train session</p>
-
- <section align="center" id="start"><img alt="logo" src="https://i.postimg.cc/pdj3T1v2/techrepo-herokuapp-com-i-Phone-XR-iphone13blue-portrait.png" width="300">
- <img alt="logo" src="https://i.postimg.cc/KctqMgC5/techrepo-herokuapp-com-registreren-i-Phone-XR-iphone13blue-portrait.png" width="300"></section>
-
 <p>please view in mobile size📱</p>
+
+ <section align="center" id="start"><img alt="logo" src="https://i.postimg.cc/zDF6bw2S/localhost-3000-i-Phone-XR-1-iphone13blue-portrait.png" width="300">
+ <img alt="logo" src="https://i.postimg.cc/YqXP8rHv/localhost-3000-register-i-Phone-XR-iphone13blue-portrait.png" width="300"></section>
+
 <h2>Chosen Feature</h2>
 <p>In this application we will be combining all of the chosen features from different collaborators</p>
 <ul>
@@ -26,7 +26,7 @@
     <li>Registration feature <a href="https://github.com/Zephelion" target="_blank">Me</a> </li>
 </ul>
 <h2>:gear:Building blocks</h2>
-<p>For building the chosen feature i will be using the following techniques</p>
+<p>For building the chosen feature we will be using the following techniques</p>
 <ul>
     <li>HTML</li>
     <li>Css</li>
