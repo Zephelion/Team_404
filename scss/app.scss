@@ -93,6 +93,27 @@ input[type=submit]{
     outline: none;
 }
 
+input[type=file]{
+    border: 1px solid #cdd4d9;
+    // padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 23px;
+    border-radius: 8px;
+    font-size: 17px;
+    margin-bottom: 13px;
+    outline: none;
+}
+
+input[type=file]::file-selector-button{
+    border: none;
+    background-color: $main-color;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    font-weight: 100;
+}
+
 form{
     input[type=submit]{
         background-color: $main-color;

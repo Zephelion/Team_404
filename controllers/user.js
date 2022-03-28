@@ -6,6 +6,10 @@ const axios = require('axios');
 const { default: mongoose } = require('mongoose');
 
 
+
+//functie om de user te storen in de database
+const storeUser =  (req,res) => {
+
 let session
 
 
@@ -15,23 +19,29 @@ const saltRounds = 10;
 //functie om de user te storen in de database (oude manier)
 const storeUser = async (req,res) => {
 
+
         //zet de req in een object
         const form = {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             age: req.body.age,
+            picture: req.file.filename,
             email: req.body.email,
             password: req.body.password,
         }
 
         //maak een nieuwe user en geef de form object mee als parameter
         const user = new User(form);
-        
         //sla op aan het einde
         user.save(function(err){
             
  
         })
+
+
+        res.redirect('/users');
+
+
 
         //zoek naar de opgeslagen user via email
         const savedUser = await User.findOne({email: req.body.email}).lean();
@@ -46,6 +56,7 @@ const storeUser = async (req,res) => {
         userGoals.save();
 
         res.redirect('/users');
+
 }
 
 
