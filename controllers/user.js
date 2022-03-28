@@ -12,47 +12,45 @@ const saltRounds = 10;
 
 
 //functie om de user te storen in de database (oude manier)
-const storeUser = async (req,res) => {
+// const storeUser = async (req,res) => {
 
+//         //zet de req in een object
+//         const form = {
+//             firstname: req.body.firstname,
+//             lastname: req.body.lastname,
+//             age: req.body.age,
+//             picture: req.file.filename,
+//             email: req.body.email,
+//             password: req.body.password,
+//         }
 
-        //zet de req in een object
-        const form = {
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            age: req.body.age,
-            picture: req.file.filename,
-            email: req.body.email,
-            password: req.body.password,
-        }
-
-        //maak een nieuwe user en geef de form object mee als parameter
-        const user = new User(form);
-        //sla op aan het einde
-        user.save(function(err){
+//         //maak een nieuwe user en geef de form object mee als parameter
+//         const user = new User(form);
+//         //sla op aan het einde
+//         user.save(function(err){
             
  
-        })
+//         })
 
 
-        res.redirect('/users');
+//         res.redirect('/users');
 
 
+//         //zoek naar de opgeslagen user via email
+//         const savedUser = await User.findOne({email: req.body.email}).lean();
 
-        //zoek naar de opgeslagen user via email
-        const savedUser = await User.findOne({email: req.body.email}).lean();
+//         //maak een nieuwe usergoals en pass de usergoals als object mee
+//         const userGoals = new UserGoals({
+//             goals: req.body.goals,
+//             user:  savedUser, 
+//         })
 
-        //maak een nieuwe usergoals en pass de usergoals als object mee
-        const userGoals = new UserGoals({
-            goals: req.body.goals,
-            user:  savedUser, 
-        })
+//         //sla op en vervolgens een redirect
+//         userGoals.save();
 
-        //sla op en vervolgens een redirect
-        userGoals.save();
+//         res.redirect('/users');
 
-        res.redirect('/users');
-
-}
+// }
 
 
 //geef de user mee naar de volgende view om de data daar te kunnen gebruiken
@@ -71,18 +69,6 @@ const passUser = (req,res) =>{
 }
 
 
-
-
-//pak alle users uit de database en geef die mee naar de view
-const fetchUsers = (req,res) => {
-    User.find().lean().then(users => {
-
-        // console.log(users);
-        res.render('userindex', {
-            users:users,
-        })
-    })
-}
 
 
 const login = async (req,res) =>{
@@ -160,21 +146,27 @@ const register = async (req,res) => {
 
 }
 
-const filter = async (req,res) =>{
+const fetchUsers = async (req,res) =>{
 
-    // console.log(req.body.goals);
-
-    const goal = '622f3399b55bbefe4f1db27b';
 
     const goals = await Goals.find().lean();
 
-    UserGoals.find({goals: goal}).populate('user').lean().then((usergoal) => {
-            
+    User.find().lean().then(users => {
+
+        // console.log(users);
         res.render('filter', {
-            usergoals:usergoal,
-            goals: goals,
+            users:users,
+            goals:goals,
         })
     })
+
+    // UserGoals.find({goals: goal}).populate('user').lean().then((usergoal) => {
+            
+    //     res.render('filter', {
+    //         usergoals:usergoal,
+    //         goals: goals,
+    //     })
+    // })
 }
 
 const filteredUser = async (req,res) => {
@@ -187,21 +179,11 @@ const filteredUser = async (req,res) => {
         res.send(usergoal);
     })
 
-    // const usergoals = await UserGoals.find({ '_id': { $in: req.body.goals } }).populate('user').lean().then(data => {
-    //     console.log(data);
-    // });
-
-    // console.log(usergoals);
-    // const goal = req.query.goals
-
-
 }
 
 module.exports = {
-    store: storeUser,
     fetch: fetchUsers,
     pass: passUser,
-    filter: filter,
     login:login,
     register: register,
     filtereduser: filteredUser,

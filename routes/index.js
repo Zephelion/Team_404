@@ -41,7 +41,7 @@ router.get('/register', (req,res) => {
 //     res.send("Not found");
 // });
 
-router.get('/filter', user.filter);
+router.get('/users', user.fetch);
 
 router.post('/filteruser', user.filtereduser);
 
