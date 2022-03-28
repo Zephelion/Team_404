@@ -10,7 +10,9 @@ const displayUsers = (data) =>{
     data.forEach(match => {
         const user = match.user;
         let html = `<div class="user">
-                <div class="user-img"></div>
+                <div class="user-img">
+                    <img src="/public/uploads/${user.picture}" alt="">
+                </div>
                 <span>${user.firstname}</span>
              </div>`
 
