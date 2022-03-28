@@ -2,7 +2,6 @@ const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 
-
 //functie om de user te storen in de database
 const storeUser = async (req,res) => {
 

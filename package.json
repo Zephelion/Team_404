@@ -1,12 +1,13 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "<h1>Project Tech Fitbud Matching Application</h1> <h2>About fitbud</h2> <p>Fitbud is a matching application where sport lovers can come together and train with each other. The application makes it very easy for users with similiar fitness background or goals to come together and have an effective train session</p> <p>please view in mobile size:)</p> <h2>Chosen Feature</h2> <p>The feature i will be making is the registration form where the user can register and get as result a list of all the different other users</p> <h2>:gear:Building blocks</h2> <p>For building the chosen feature i will be using the following techniques</p> <ul>     <li>HTML</li>     <li>Css</li>     <li>Javascript</li>     <li>Node.js</li>     <li>Express.js</li>     <li>MongoDB</li>     <li>Mongoose</li> </ul> <h2>:rocket:Installation</h2> <p>In order to use the application you first need to clone the repository. The command below will allow you to clone the repository to your local machine<p>",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "scss": "node-sass --watch scss/app.scss -o public/css --output-style compressed"
+    "scss": "node-sass --watch scss/app.scss -o public/css --output-style compressed",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -21,11 +22,25 @@
     "express-unless": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "mongoose": "^6.2.4"
+    "mongoose": "^6.2.4",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-uglify": "^3.0.2",
     "named-routes": "^2.0.7",
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zephelion/Team_404.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zephelion/Team_404/issues"
+  },
+  "homepage": "https://github.com/Zephelion/Team_404#readme"
 }
