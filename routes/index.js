@@ -49,9 +49,9 @@ router.post('/filteruser', user.filtereduser);
 router.post('/login', user.login);
 
 
-router.post('/register', upload.single("picture"), user.store);
+router.post('/register', upload.single("picture"), user.register);
 
-router.post('/register', user.register);
+// router.post('/register', user.register);
 
 
 

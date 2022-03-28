@@ -2,13 +2,8 @@ const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 const bcrypt = require('bcrypt');
-const axios = require('axios');
 const { default: mongoose } = require('mongoose');
 
-
-
-//functie om de user te storen in de database
-const storeUser =  (req,res) => {
 
 let session
 
@@ -130,6 +125,7 @@ const register = async (req,res) => {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         age: req.body.age,
+        picture: req.file.filename,
         email: req.body.email,
         password: password
     }
