@@ -20,7 +20,6 @@ main.step{
         gap: 30px;
 
         h1{
-            font-family: 'Segoe UI';
             font-weight: 400;
             font-size: 2em;
             text-align: center;
@@ -61,7 +60,6 @@ main.step{
                     border-radius:10px;
                     padding: 15px;
 
-                    font-family: 'Segoe UI';
                     flex-grow: 1;
                     display: flex;
                     align-items: center;
@@ -101,10 +99,6 @@ main.step{
                         font-size: 1.2em;
                         min-width: 123px;
                         border-radius: 9px;
-                    }
-
-                    label{
-                        font-family: 'Segoe UI';
                     }
 
                 }

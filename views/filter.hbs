@@ -1,0 +1,32 @@
+<main class="index">
+
+    <section class="filter-container">
+        <form class="filter-form" action="/filteruser">
+            <div class="goals">
+                {{#each goals}}
+                    <input type="checkbox" id="{{title}}" name="goals" value="{{_id}}">
+                    <label class="fitness" for="{{title}}">{{title}}</label>
+                {{/each}}
+            </div>
+
+            <input type="submit" class="apply-filter" value="Apply">
+        </form>
+    </section>
+
+
+    <section class="container">
+        <section class="user-container">
+            {{#each usergoals}}
+                <div class="user">
+                    <div class="user-img"></div>
+                    <span>{{user.firstname}}</span>
+                </div>
+            {{/each}}
+        </section>
+    </section>
+
+    <div class="filter-button">
+        <img class="filter-icon" src="/public/assets/icons/filter.svg" alt="">
+    </div>
+</main>
+<script src="/public/js/userindex.js"></script>

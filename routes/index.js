@@ -21,7 +21,6 @@ const upload = multer({ storage: storage});
 
 //Hier zet ik alle routes en zo zet ik ze weer naar een controller
 router.get('/', (req,res,) => {
-
     res.render('start');
 
 });
@@ -36,15 +35,24 @@ router.get('/register', (req,res) => {
     res.render('register');
 })
 
+
 //page not found
-router.get("*", (req, res) => {
-    res.send("Not found");
-});
+// router.get("*", (req, res) => {
+//     res.send("Not found");
+// });
 
 router.get('/filter', user.filter);
 
+router.post('/filteruser', user.filtereduser);
+
+
+router.post('/login', user.login);
+
 
 router.post('/register', upload.single("picture"), user.store);
+
+router.post('/register', user.register);
+
 
 
 module.exports = router;

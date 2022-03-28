@@ -1,10 +1,25 @@
 const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
+const bcrypt = require('bcrypt');
+const axios = require('axios');
+const { default: mongoose } = require('mongoose');
+
 
 
 //functie om de user te storen in de database
 const storeUser =  (req,res) => {
+
+let session
+
+
+const saltRounds = 10;
+
+
+//functie om de user te storen in de database (oude manier)
+const storeUser = async (req,res) => {
+
+
         //zet de req in een object
         const form = {
             firstname: req.body.firstname,
@@ -23,8 +38,24 @@ const storeUser =  (req,res) => {
  
         })
 
+
         res.redirect('/users');
 
+
+
+        //zoek naar de opgeslagen user via email
+        const savedUser = await User.findOne({email: req.body.email}).lean();
+
+        //maak een nieuwe usergoals en pass de usergoals als object mee
+        const userGoals = new UserGoals({
+            goals: req.body.goals,
+            user:  savedUser, 
+        })
+
+        //sla op en vervolgens een redirect
+        userGoals.save();
+
+        res.redirect('/users');
 
 }
 
@@ -45,6 +76,8 @@ const passUser = (req,res) =>{
 }
 
 
+
+
 //pak alle users uit de database en geef die mee naar de view
 const fetchUsers = (req,res) => {
     User.find().lean().then(users => {
@@ -56,17 +89,125 @@ const fetchUsers = (req,res) => {
     })
 }
 
-const filter = (req,res) =>{
-    const age = '21';
 
-    User.find({age: age}, function(err,doc){
-        console.log(doc);
+const login = async (req,res) =>{
+    
+    try {
+        const checkuser = await User.findOne({
+            email: req.body.email
+        });
+        if (checkuser) {
+            const compare = await bcrypt.compare(req.body.password, checkuser.password);
+            if (compare) {
+                session = req.session
+                
+                session.email = req.body.email
+
+                console.log("Inloggen voltooid!");
+                res.redirect("/users");
+
+            } else {
+                console.error("Foute gebruikersnaam of wachtwoord")
+                res.redirect("/")
+            }
+        } else {
+            console.error("Foute gebruikersnaam of wachtwoord")
+            res.redirect("/")
+        }
+    } catch (error) {
+        console.error(error);
+        res.redirect("/")
+    }
+}
+
+
+const register = async (req,res) => {
+    //hash de wachtwoord
+    const password = await bcrypt.hash(req.body.password, saltRounds);
+
+    //ik zet de request in een form object
+    const form = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        age: req.body.age,
+        email: req.body.email,
+        password: password
+    }
+
+    //geef het form object mee en maak een nieuwe gebruiker
+    const user = new User(form);
+
+    //sla de gebruiker op in de database
+    user.save(async (error) => {
+        if (error){
+            console.log(error);
+            return res.status(500).redirect('/register')
+        }else{
+            console.log("succes");
+
+            //zoek naar de opgeslagen user via email
+            const savedUser = await User.findOne({email: req.body.email}).lean();
+
+            //maak een nieuwe usergoals en pass de usergoals als object mee
+            const userGoals = new UserGoals({
+                goals: req.body.goals,
+                user:  savedUser, 
+            })
+
+            //sla op en vervolgens een redirect
+            userGoals.save();
+
+            res.redirect('/users');
+
+        }
     })
+
+}
+
+const filter = async (req,res) =>{
+
+    // console.log(req.body.goals);
+
+    const goal = '622f3399b55bbefe4f1db27b';
+
+    const goals = await Goals.find().lean();
+
+    UserGoals.find({goals: goal}).populate('user').lean().then((usergoal) => {
+            
+        res.render('filter', {
+            usergoals:usergoal,
+            goals: goals,
+        })
+    })
+}
+
+const filteredUser = async (req,res) => {
+
+    console.log(req.body);
+
+    const goal = req.body.goals;
+    
+    UserGoals.find({goals: goal}).populate('user').lean().then(usergoal => {
+        res.send(usergoal);
+    })
+
+    // const usergoals = await UserGoals.find({ '_id': { $in: req.body.goals } }).populate('user').lean().then(data => {
+    //     console.log(data);
+    // });
+
+    // console.log(usergoals);
+    // const goal = req.query.goals
+
+
 }
 
 module.exports = {
     store: storeUser,
     fetch: fetchUsers,
     pass: passUser,
-    filter: filter
+    filter: filter,
+    login:login,
+    register: register,
+    filtereduser: filteredUser,
+
 }
