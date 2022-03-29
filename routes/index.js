@@ -31,6 +31,8 @@ router.get('/users', user.fetch);
 
 router.get('/create', user.pass);
 
+router.get('/logout', user.fetch);
+
 router.get('/register', (req,res) => {
     res.render('register');
 })
@@ -45,12 +47,12 @@ router.get('/users', user.fetch);
 
 router.post('/filteruser', user.filtereduser);
 
-router.post('/logout');
-
-
 router.post('/login', user.login);
 
-
+router.post('/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+});
 
 router.post('/register', upload.single("picture"), user.register);
 
