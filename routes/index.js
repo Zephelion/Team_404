@@ -53,6 +53,10 @@ router.post('/register', upload.single("picture"), user.register);
 
 router.get('/profile', user.fetchOne);
 
+router.get('/update', user.updateUser);
+
+router.post('/update', user.updateOne);
+
 // router.post('/register', user.register);
 
 

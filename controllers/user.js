@@ -190,6 +190,37 @@ const fetchOnesuser = async (req,res) =>{
     res.render("profile", userData);
 }
 
+const updateOnesuser = async (req,res) =>{
+
+    const userData = await User.findOne({firstname: 'Eva'}).lean();
+    console.log(userData);
+
+    res.render("update", userData);
+}
+
+const updateOne = async (req,res) =>{
+     try {
+        const filter = { firstname: "Eva" };
+
+        const update = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        age: req.body.age,
+        email: req.body.email
+        };
+
+         const profileDataupdate = await User.findOneAndUpdate(filter, update).lean(); //vinden en updaten
+
+         const userData = await User.findOne({firstname: 'Eva'}).lean();
+         console.log(userData);
+     
+         res.render("profile", userData);
+         
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
 module.exports = {
     fetch: fetchUsers,
     pass: passUser,
@@ -197,5 +228,7 @@ module.exports = {
     register: register,
     filtereduser: filteredUser,
     fetchOne: fetchOnesuser,
+    updateUser: updateOnesuser,
+    updateOne: updateOne,
 
 }
