@@ -35,6 +35,8 @@ router.get('/register', (req,res) => {
     res.render('register');
 })
 
+router.post('/getuser', user.finduser);
+
 
 //page not found
 // router.get("*", (req, res) => {

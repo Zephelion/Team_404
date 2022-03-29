@@ -181,11 +181,21 @@ const filteredUser = async (req,res) => {
 
 }
 
+const findUser = (req,res) => {
+
+    const id = req.body.id;
+
+    User.findOne({_id: id}).then(user => {
+        res.send(user)
+    })
+}
+
 module.exports = {
     fetch: fetchUsers,
     pass: passUser,
     login:login,
     register: register,
     filtereduser: filteredUser,
+    finduser: findUser,
 
 }
