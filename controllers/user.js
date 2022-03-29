@@ -2,7 +2,7 @@ const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 const bcrypt = require('bcrypt');
-const { default: mongoose } = require('mongoose');
+const UserLike = require('../models/UserLike');
 
 
 let session
@@ -44,6 +44,7 @@ const login = async (req,res) =>{
                 session.email = req.body.email
 
                 console.log("Inloggen voltooid!");
+                console.log(session);
                 res.redirect("/users");
 
             } else {
@@ -140,11 +141,29 @@ const filteredUser = async (req,res) => {
 
 }
 
+const findUser = (req,res) => {
+
+    const id = req.body.id;
+
+    User.findOne({_id: id}).then(user => {
+        res.send(user)
+    })
+}
+
+const like = (req,res) => {
+
+    console.log(req.session)
+    // const loggedUser = 
+    // console.log(req.body.id);
+}
+
 module.exports = {
     fetch: fetchUsers,
     pass: passUser,
     login:login,
     register: register,
     filtereduser: filteredUser,
+    finduser: findUser,
+    like: like
 
 }

@@ -35,6 +35,8 @@ router.get('/register', (req,res) => {
     res.render('register');
 })
 
+router.post('/getuser', user.finduser);
+
 
 //page not found
 // router.get("*", (req, res) => {
@@ -47,6 +49,7 @@ router.post('/filteruser', user.filtereduser);
 
 
 router.post('/login', user.login);
+router.post('/like', user.like);
 
 
 router.post('/register', upload.single("picture"), user.register);
