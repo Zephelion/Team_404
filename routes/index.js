@@ -49,10 +49,7 @@ router.post('/filteruser', user.filtereduser);
 
 router.post('/login', user.login);
 
-router.post('/logout', (req, res) => {
-  req.session.destroy();
-  res.redirect('/');
-});
+router.post('.logout-button', user.logout);
 
 router.post('/register', upload.single("picture"), user.register);
 
