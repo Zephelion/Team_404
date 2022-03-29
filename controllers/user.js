@@ -181,11 +181,21 @@ const filteredUser = async (req,res) => {
 
 }
 
+//add user to profile
+const fetchOnesuser = async (req,res) =>{
+
+    const userData = await User.findOne({firstname: 'Eva'}).lean();
+    console.log(userData);
+
+    res.render("profile", {userData});
+}
+
 module.exports = {
     fetch: fetchUsers,
     pass: passUser,
     login:login,
     register: register,
     filtereduser: filteredUser,
+    fetchOne: fetchOnesuser,
 
 }

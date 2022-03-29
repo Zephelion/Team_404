@@ -4,7 +4,9 @@
     </a>
 
     <section>
-        <img src="/public/uploads/{{picture}}" alt="profilepicture">
+            {{#if picture }}
+                <img src="/public/uploads/{{picture}}" alt="">
+            {{/if}}
         <h2>Hello {{firstname}} welcome to your profile!</h2>
         <button>Update profile</button>
     </section>

@@ -6,6 +6,7 @@ const path = require('path');
 
 //multer invoegen
 const multer = require("multer");
+const UserGoal = require('../models/UserGoal');
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(__dirname, "../public/uploads") );
@@ -35,10 +36,6 @@ router.get('/register', (req,res) => {
     res.render('register');
 })
 
-router.get('/profile', (req,res) => {
-  res.render('profile');
-})
-
 //page not found
 // router.get("*", (req, res) => {
 //     res.send("Not found");
@@ -53,6 +50,8 @@ router.post('/login', user.login);
 
 
 router.post('/register', upload.single("picture"), user.register);
+
+router.get('/profile', user.fetchOne);
 
 // router.post('/register', user.register);
 
