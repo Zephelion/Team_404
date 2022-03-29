@@ -1,6 +1,6 @@
 <h1>Project Tech Fitbud Matching Application</h1>
 
-<section align="center" id="start"><img alt="logo" src="https://i.postimg.cc/W4g1xtX3/fitness.png" width="600"></section>
+<section align="center" id="start"><img alt="logo" src="https://i.postimg.cc/W4g1xtX3/fitness.png" width="300"></section>
 
 <section align="center">
   <a href="https://github.com/Zephelion/Team_404/issues" target="_blank"><img alt="Issues" src="https://img.shields.io/github/issues/Zephelion/Team_404"></a>
