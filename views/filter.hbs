@@ -1,5 +1,11 @@
 <main class="index">
 
+    {{!-- <section class="user-details">
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+    </section> --}}
+
     <section class="filter-container">
         <form class="filter-form" action="/filteruser">
             <div class="goals">
@@ -17,7 +23,7 @@
     <section class="container">
         <section class="user-container">
             {{#each users}}
-                <div class="user">
+                <div class="user" data-id="{{_id}}">
                     <div class="user-img">
                         {{#if picture }}
                             <img src="/public/uploads/{{picture}}" alt="">
