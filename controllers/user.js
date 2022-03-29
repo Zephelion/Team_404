@@ -11,47 +11,6 @@ let session
 const saltRounds = 10;
 
 
-//functie om de user te storen in de database (oude manier)
-// const storeUser = async (req,res) => {
-
-//         //zet de req in een object
-//         const form = {
-//             firstname: req.body.firstname,
-//             lastname: req.body.lastname,
-//             age: req.body.age,
-//             picture: req.file.filename,
-//             email: req.body.email,
-//             password: req.body.password,
-//         }
-
-//         //maak een nieuwe user en geef de form object mee als parameter
-//         const user = new User(form);
-//         //sla op aan het einde
-//         user.save(function(err){
-            
- 
-//         })
-
-
-//         res.redirect('/users');
-
-
-//         //zoek naar de opgeslagen user via email
-//         const savedUser = await User.findOne({email: req.body.email}).lean();
-
-//         //maak een nieuwe usergoals en pass de usergoals als object mee
-//         const userGoals = new UserGoals({
-//             goals: req.body.goals,
-//             user:  savedUser, 
-//         })
-
-//         //sla op en vervolgens een redirect
-//         userGoals.save();
-
-//         res.redirect('/users');
-
-// }
-
 
 //geef de user mee naar de volgende view om de data daar te kunnen gebruiken
 const passUser = (req,res) =>{
