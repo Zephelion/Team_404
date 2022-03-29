@@ -32,6 +32,12 @@ const displaySingleUser = (data) => {
                             <h2>${data.firstname}</h2>
                             <h2>${data.lastname}</h2>
                             <h2>${data.age}</h2>
+
+                            <form action="/like" method="post">
+
+                                <input type="hidden" name="id" value="${data._id}">
+                                <input type="submit" value="like">
+                            </form>
                         </section>`
     userIndex.insertAdjacentHTML('beforeend', details)
 }
