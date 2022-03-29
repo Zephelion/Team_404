@@ -135,7 +135,9 @@ main.index{
         input.logout-button{
             background-image: url(https://i.postimg.cc/Bv0mGWjw/logout.png);
             background-color: #0064FE;
-            background-size: 90%;
+            color: transparent;
+            background-size: 73%;
+            background-position: center;
             background-repeat: no-repeat;
             width: 70px;
             height: 70px;
@@ -144,8 +146,6 @@ main.index{
             bottom: 30px;
             left: 15px;
             box-shadow: 2px 4px 16px -7px grey;
-            display: flex;
-            justify-content: center;
         }
     }
 }   
