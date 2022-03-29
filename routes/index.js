@@ -49,6 +49,7 @@ router.post('/filteruser', user.filtereduser);
 
 
 router.post('/login', user.login);
+router.post('/like', user.like);
 
 
 router.post('/register', upload.single("picture"), user.register);
