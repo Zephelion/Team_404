@@ -45,8 +45,11 @@ router.get('/users', user.fetch);
 
 router.post('/filteruser', user.filtereduser);
 
+router.post('/logout');
+
 
 router.post('/login', user.login);
+
 
 
 router.post('/register', upload.single("picture"), user.register);
