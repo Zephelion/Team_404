@@ -15,7 +15,6 @@ const loggedUser = (req,res,next) => {
 
 const guest = (req,res,next) => {
     
-
     session = req.session;
     if(session.email){
         console.log('hier moet je zijn')
