@@ -187,7 +187,7 @@ const fetchOnesuser = async (req,res) =>{
     const userData = await User.findOne({firstname: 'Eva'}).lean();
     console.log(userData);
 
-    res.render("profile", {userData});
+    res.render("profile", userData);
 }
 
 module.exports = {
