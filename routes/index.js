@@ -5,12 +5,13 @@ const userRoutes = require('./users');
 const loginRoutes = require('./login');
 const registerRoutes = require('./register');
 const goalRoutes = require('./goals');
+const loggedUser = require('../middleware/isLoggedIn')
 
 
 router.use('/', homeRoutes);
-router.use('/users', userRoutes);
+router.use('/users', loggedUser.loggeduser, userRoutes);
 router.use('/register', registerRoutes);
-router.use('/login', loginRoutes);
+router.use('/login', loggedUser.loggeduser, loginRoutes);
 
 
 //page not found
