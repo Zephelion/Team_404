@@ -3,7 +3,6 @@ const sectionFilter = document.querySelector('.filter-container');
 const filterForm = document.querySelector('.filter-form');
 const userContainer = document.querySelector('.user-container');
 
-
 const displayUsers = (data) =>{
 
     userContainer.innerHTML = "";
