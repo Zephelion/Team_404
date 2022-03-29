@@ -35,6 +35,9 @@ router.get('/register', (req,res) => {
     res.render('register');
 })
 
+router.get('/profile', (req,res) => {
+  res.render('profile');
+})
 
 //page not found
 // router.get("*", (req, res) => {
