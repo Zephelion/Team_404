@@ -1,5 +1,3 @@
-<h1>Project Tech Fitbud Matching Application</h1>
-
 <section align="center" id="start"><img alt="logo" src="https://i.postimg.cc/W4g1xtX3/fitness.png" width="300"></section>
 
 <section align="center">
