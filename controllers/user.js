@@ -198,6 +198,7 @@ const updateOnesuser = async (req,res) =>{
     res.render("update", userData);
 }
 
+//update functie
 const updateOne = async (req,res) =>{
      try {
         const filter = { firstname: "Eva" };
@@ -209,13 +210,13 @@ const updateOne = async (req,res) =>{
         email: req.body.email
         };
 
-         const profileDataupdate = await User.findOneAndUpdate(filter, update).lean(); //vinden en updaten
+         await User.findOneAndUpdate(filter, update).lean(); 
 
          const userData = await User.findOne({firstname: 'Eva'}).lean();
          console.log(userData);
      
          res.render("profile", userData);
-         
+
     } catch (error) {
         throw new Error(error);
     }
@@ -224,7 +225,7 @@ const updateOne = async (req,res) =>{
 module.exports = {
     fetch: fetchUsers,
     pass: passUser,
-    login:login,
+    login: login,
     register: register,
     filtereduser: filteredUser,
     fetchOne: fetchOnesuser,
