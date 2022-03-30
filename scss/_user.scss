@@ -128,5 +128,29 @@ main.index{
             transform: rotate(90deg);
         }
     }
+
+    form{
+        position: fixed;
+    
+        input.logout-button{
+            background-image: url(https://i.postimg.cc/Bv0mGWjw/logout.png);
+            background-color: #0064FE;
+            color: transparent;
+            background-size: 70%;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 30px;
+            left: 15px;
+            box-shadow: 2px 4px 16px -7px grey;
+        }
+    }
 }   
+
+
+
+
    

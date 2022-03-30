@@ -181,11 +181,18 @@ const filteredUser = async (req,res) => {
 
 }
 
+const logout = (req,res) => {
+    req.session.destroy();
+    res.redirect('/');
+}
+
+
 module.exports = {
     fetch: fetchUsers,
     pass: passUser,
     login:login,
     register: register,
     filtereduser: filteredUser,
+    logout: logout,
 
 }
