@@ -46,6 +46,11 @@ const register = async (req,res) => {
             //sla op en vervolgens een redirect
             userGoals.save();
 
+            session = req.session
+            session.email = req.body.email
+
+            console.log('registreren voltooid');
+
             res.redirect('/users');
 
         }
@@ -85,6 +90,11 @@ const login = async (req,res) =>{
     }
 }
 
+const logout = (req,res) => {
+    req.session.destroy();
+    res.redirect('/welcome');
+}
+
 //geef de user mee naar de volgende view om de data daar te kunnen gebruiken
 const passUser = (req,res) =>{
     const userInfo = req.query;
@@ -105,5 +115,6 @@ module.exports = {
     pass: passUser,
     login:login,
     register: register,
+    logout:logout,
 
 }
