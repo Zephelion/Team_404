@@ -96,7 +96,7 @@ const login = async (req,res) =>{
             res.redirect("/")
         }
     } catch (error) {
-        console.error(error);
+        console.error("Gebruiker bestaat niet");
         res.redirect("/")
     }
 }
@@ -218,7 +218,7 @@ const updateOne = async (req,res) =>{
          res.render("profile", userData);
 
     } catch (error) {
-        throw new Error(error);
+        throw new Error("Profile not updated");
     }
 }
 
