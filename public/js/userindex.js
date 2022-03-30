@@ -27,7 +27,7 @@ const filterUsers = (e) =>{
 
     console.log(goals);
 
-    axios.post('/filteruser', {goals:goals})
+    axios.post('/users/filter', {goals:goals})
     .then(function (response) {
         // handle success
         // console.log(response.data.user);
