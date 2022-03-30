@@ -31,15 +31,9 @@ const filteredUser = async (req,res) => {
 
 }
 
-const logout = (req,res) => {
-    req.session.destroy();
-    res.redirect('/');
-}
 
 
 module.exports = {
     fetch: fetchUsers,
     filtereduser: filteredUser,
-    logout: logout,
-
 }
