@@ -9,7 +9,7 @@ const loggedUser = (req,res,next) => {
     if(session.email){
         next();
     }else{
-        res.redirect('/')
+        res.redirect('/welcome')
     }
 }
 
