@@ -78,15 +78,15 @@ const login = async (req,res) =>{
 
             } else {
                 console.error("Foute gebruikersnaam of wachtwoord")
-                res.redirect("/")
+                res.redirect("/welcome")
             }
         } else {
             console.error("Foute gebruikersnaam of wachtwoord")
-            res.redirect("/")
+            res.redirect("/welcome")
         }
     } catch (error) {
         console.error(error);
-        res.redirect("/")
+        res.redirect("/welcome")
     }
 }
 
