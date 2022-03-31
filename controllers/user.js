@@ -21,11 +21,12 @@ const fetchUsers = async (req,res) =>{
 
 const filteredUser = async (req,res) => {
 
-    console.log(req.body);
+    // console.log(req.body);
 
     const goal = req.body.goals;
     
     UserGoals.find({goals: goal}).populate('user').lean().then(usergoal => {
+
         res.send(usergoal);
     })
 

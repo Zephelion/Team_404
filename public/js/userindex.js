@@ -53,7 +53,7 @@ const filterUsers = (e) =>{
     axios.post('/users/filter', {goals:goals})
     .then(function (response) {
         // handle success
-        // console.log(response.data.user);
+        console.log(response.data);
         displayUsers(response.data);
 
         sectionFilter.classList.remove('filter-up');
