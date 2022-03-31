@@ -2,7 +2,6 @@ const User = require('../models/User');
 const UserGoals = require('../models/UserGoal');
 const bcrypt = require('bcrypt');
 const Goals = require('../models/Goal');
-const sendEmail = require('nodemailer');
 const mailer = require('./mailer');
 
 let session
