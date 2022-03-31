@@ -19,7 +19,7 @@
 <ul>
     <li>Filter feature <a href="https://github.com/Laserjonge" target="_blank">Axel de ruiter</a></li>
     <li>Like feature <a href="https://github.com/svendoejaaren" target="_blank">Sven doejaaren</a></li>
-    <li>Login feature <a href="https://github.com/DaanDH12" target="_blank">Daan Honing</a></li>
+    <li>Login/Logout feature <a href="https://github.com/DaanDH12" target="_blank">Daan Honing</a></li>
     <li>Update feature <a href="https://github.com/EvaZ7" target="_blank">Eva Zaadnoordijk</a></li>
     <li>Registration feature <a href="https://github.com/Zephelion" target="_blank">Me</a> </li>
 </ul>
