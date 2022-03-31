@@ -5,10 +5,10 @@
       <img class="icon" src="/public/assets/icons/back.svg" alt="">
     </a>
 
-  <section class="user-container">
+  <section class="profile-container">
     <div class="user">
 
-        <div class="user-img">
+        <div class="profile-img">
             {{#if picture }}
             <img src="/public/uploads/{{picture}}" alt="profile picture">
             {{/if}}
@@ -18,7 +18,13 @@
     </div>
   </section>
 
-<a href="/update"><button>Update profile</button></a>
+<a class="edit-button" href="/update">
+  <button>
+    <img src="/public/assets/icons/edit.svg" alt="">
+  </button>
+
+</a>
 </section>
+<section class="details-container"></section>
 
 </main>
