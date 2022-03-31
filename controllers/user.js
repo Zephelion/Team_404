@@ -184,16 +184,16 @@ const filteredUser = async (req,res) => {
 //add user to profile
 const fetchOnesuser = async (req,res) =>{
 
-    const userData = await User.findOne({firstname: 'Eva'}).lean();
-    console.log(userData);
+    const userData = await User.findOne(req.session).lean();
+    //console.log(userData);
 
     res.render("profile", userData);
 }
 
 const updateOnesuser = async (req,res) =>{
 
-    const userData = await User.findOne({firstname: 'Eva'}).lean();
-    console.log(userData);
+    const userData = await User.findOne(req.session).lean();
+    //console.log(userData);
 
     res.render("update", userData);
 }
@@ -201,7 +201,7 @@ const updateOnesuser = async (req,res) =>{
 //update functie
 const updateOne = async (req,res) =>{
      try {
-        const filter = { firstname: "Eva" };
+        const filter = (req.session);
 
         const update = {
         firstname: req.body.firstname,
@@ -212,8 +212,8 @@ const updateOne = async (req,res) =>{
 
          await User.findOneAndUpdate(filter, update).lean(); 
 
-         const userData = await User.findOne({firstname: 'Eva'}).lean();
-         console.log(userData);
+         const userData = await User.findOne(req.session).lean();
+         //console.log(userData);
      
          res.render("profile", userData);
 
