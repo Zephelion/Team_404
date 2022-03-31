@@ -1,7 +1,9 @@
 const User = require('../models/User');
 const UserGoals = require('../models/UserGoal');
 const bcrypt = require('bcrypt');
-const Goals = require('../models/Goal')
+const Goals = require('../models/Goal');
+const sendEmail = require('nodemailer');
+const mailer = require('./mailer');
 
 let session
 
@@ -48,6 +50,9 @@ const register = async (req,res) => {
 
             session = req.session
             session.email = req.body.email
+            mailer.sendEmail(req.body.email).catch(console.error);
+            
+            // sendEmail(req.body.email).catch(console.error)
 
             console.log('registreren voltooid');
 
