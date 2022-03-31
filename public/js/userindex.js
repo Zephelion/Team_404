@@ -1,7 +1,12 @@
+
 const filterBtn = document.querySelector('.filter-button');
 const sectionFilter = document.querySelector('.filter-container');
 const filterForm = document.querySelector('.filter-form');
 const userContainer = document.querySelector('.user-container');
+const users = document.querySelectorAll('.user');
+const userDetails = document.querySelector('.user-details');
+const userIndex = document.querySelector('.index');
+
 
 const displayUsers = (data) =>{
 
@@ -18,6 +23,24 @@ const displayUsers = (data) =>{
         userContainer.insertAdjacentHTML('beforeend', html);
     });
 }  
+
+const displaySingleUser = (data) => {
+    console.log(data);
+
+    let details = 
+    `    <section class="user-details">
+            <h2>${data.firstname}</h2>
+            <h2>${data.lastname}</h2>
+            <h2>${data.age}</h2>
+
+            <form action="/like" method="post">
+
+                <input type="hidden" name="id" value="${data._id}">
+                <input type="submit" value="like">
+            </form>
+        </section>`
+    userIndex.insertAdjacentHTML('beforeend', details)
+}
 
 const filterUsers = (e) =>{
     e.preventDefault();
@@ -50,4 +73,20 @@ filterBtn.addEventListener('click', () => {
 })
 
 filterForm.addEventListener('submit', filterUsers);
+
+users.forEach(user => {
+    user.addEventListener('click', () =>{
+
+        const id = user.dataset.id;
+        axios.post('/getuser', {id:id})
+        .then(function (response) {
+            // handle success
+            displaySingleUser(response.data);
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+    })
+})
 

@@ -19,11 +19,17 @@ router.use('/logout', logoutRoutes);
 // router.get('/logout', user.fetch);
 
 
+router.post('/getuser', user.finduser);
+
 
 //page not found
 // router.get("*", (req, res) => {
 //     res.send("Not found");
 // });
+
+
+router.post('/like', user.like);
+
 
 
 
