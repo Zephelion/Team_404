@@ -152,22 +152,38 @@ const findUser = (req,res) => {
 
 const like = async (req,res) => {
 
+
+
     const likedUser = req.body.id;
 
-    console.log(likedUser)
+
 
     //pak de ingelogde gebruiker
+
     session = req.session
+
     const loggedUser = await User.findOne({email: session.email}).lean();
 
-    const UserLike = new UserLike({
-        user: loggedUser._id,
+    const loggedUserId = loggedUser._id
+
+    console.log(loggedUserId);
+
+    const UserLiked = new UserLike({
+
+        user: loggedUserId,
+
         liked_user: likedUser,
+
     })
 
-    UserLike.save()
+    // console.log(UserLiked);
+
+    UserLiked.save()
+
+
 
     res.redirect('/users');
+
 }
 
 module.exports = {

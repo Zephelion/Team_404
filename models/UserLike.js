@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 const UserLikeSchema = new mongoose.Schema({
 
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-    liked_user: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    liked_user: { type: Schema.Types.ObjectId, ref: 'User' },
 
 })
 
