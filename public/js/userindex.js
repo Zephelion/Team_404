@@ -78,7 +78,7 @@ users.forEach(user => {
     user.addEventListener('click', () =>{
 
         const id = user.dataset.id;
-        axios.post('/getuser', {id:id})
+        axios.post('/users/getuser', {id:id})
         .then(function (response) {
             // handle success
             displaySingleUser(response.data);

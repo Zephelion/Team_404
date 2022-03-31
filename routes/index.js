@@ -5,21 +5,20 @@ const userRoutes = require('./users');
 const loginRoutes = require('./login');
 const registerRoutes = require('./register');
 const logoutRoutes = require('./logout');
+const likeRoutes = require('./likes');
 const goalRoutes = require('./goals');
-const loggedUser = require('../middleware/authorization')
+const loggedUser = require('../middleware/authorization');
+
 
 
 router.use('/welcome',loggedUser.guest, homeRoutes);
 router.use('/users', loggedUser.loggeduser, userRoutes);
 router.use('/register', registerRoutes);
 router.use('/login', loginRoutes);
+router.use('/like', likeRoutes);
 router.use('/logout', logoutRoutes);
 
 
-// router.get('/logout', user.fetch);
-
-
-router.post('/getuser', user.finduser);
 
 
 //page not found
@@ -28,7 +27,6 @@ router.post('/getuser', user.finduser);
 // });
 
 
-router.post('/like', user.like);
 
 
 

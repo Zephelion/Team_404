@@ -4,6 +4,7 @@ const user = require('../controllers/user');
 
 router.get('/', user.fetch);
 router.post('/filter', user.filtereduser);
+router.post('/getuser', user.finduser);
 
 
 module.exports = router;

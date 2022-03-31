@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
+const UserLike = require('../models/UserLike');
 
 const fetchUsers = async (req,res) =>{
 
@@ -42,22 +43,21 @@ const findUser = (req,res) => {
 
 const like = async (req,res) => {
 
-
-
+    //pak de user zijn user id uit de client side
     const likedUser = req.body.id;
 
 
-
-    //pak de ingelogde gebruiker
-
+    //pak de ingelogde gebruiker uit de sessie
     session = req.session
 
+    //zoek de user in de database
     const loggedUser = await User.findOne({email: session.email}).lean();
 
     const loggedUserId = loggedUser._id
 
     console.log(loggedUserId);
 
+    //sla de like op in de database
     const UserLiked = new UserLike({
 
         user: loggedUserId,
@@ -77,9 +77,9 @@ const like = async (req,res) => {
 }
 
 module.exports = {
+
     fetch: fetchUsers,
     filtereduser: filteredUser,
-
     finduser: findUser,
     like: like
 
