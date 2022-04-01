@@ -20,7 +20,6 @@ router.use('/logout', logoutRoutes);
 
 
 
-
 //page not found
 // router.get("*", (req, res) => {
 //     res.send("Not found");
@@ -28,6 +27,13 @@ router.use('/logout', logoutRoutes);
 
 
 
+router.get('/profile', user.fetchOne);
+
+router.get('/update', user.updateUser);
+
+router.post('/update', user.updateOne);
+
+// router.post('/register', user.register);
 
 
 

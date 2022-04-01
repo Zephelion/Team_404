@@ -77,6 +77,47 @@ const like = async (req,res) => {
 
 }
 
+//add user to profile
+const fetchOnesuser = async (req,res) =>{
+
+    const userData = await User.findOne(req.session).lean();
+    //console.log(userData);
+
+    res.render("profile", userData);
+}
+
+const updateOnesuser = async (req,res) =>{
+
+    const userData = await User.findOne(req.session).lean();
+    //console.log(userData);
+
+    res.render("update", userData);
+}
+
+//update functie
+const updateOne = async (req,res) =>{
+     try {
+        const filter = (req.session);
+
+        const update = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        age: req.body.age,
+        email: req.body.email
+        };
+
+         await User.findOneAndUpdate(filter, update).lean(); 
+
+         const userData = await User.findOne(req.session).lean();
+         //console.log(userData);
+     
+         res.render("profile", userData);
+
+    } catch (error) {
+        throw new Error("Profile not updated");
+    }
+}
+
 module.exports = {
 
     fetch: fetchUsers,

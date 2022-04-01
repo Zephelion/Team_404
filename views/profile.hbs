@@ -1,12 +1,36 @@
 <main class="profile">
-    <a href="/userindex">
-        <img class="icon" src="/public/assets/icons/back.svg" alt="">
+
+<section class="container">
+    <a href="/users"> 
+      <img class="icon" src="/public/assets/icons/back.svg" alt="">
     </a>
 
-    <section>
-        <img src="../public/uploads/{{info.picture}}">
-        <h2>Hello {{info.firstname}} welcome to your profile!</h2>
-        <button>Update profile</button>
-    </section>
+  <section class="profile-container">
+    <div class="user">
+
+        <div class="profile-img">
+            {{#if picture }}
+            <img src="/public/uploads/{{picture}}" alt="profile picture">
+            {{/if}}
+        </div>
+
+        <h2>Hello {{firstname}} welcome to your profile!</h2>
+    </div>
+  </section>
+
+<a class="edit-button" href="/update">
+  <button>
+    <img src="/public/assets/icons/edit.svg" alt="">
+  </button>
+
+</a>
+</section>
+<section class="details-container">
+
+<p>{{firstname}} {{lastname}}</p>
+<p>{{email}}</p>
+<p>{{age}}</p>
+
+</section>
 
 </main>
