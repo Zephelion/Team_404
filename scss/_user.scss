@@ -176,6 +176,27 @@ main.index {
     }
   }
 
+  div.profile-button{
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    align-items: center;
+    box-shadow: 2px 4px 16px -7px grey;
+    display: flex;
+    justify-content: center;
+    left: 160px;
+
+    a{
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      align-items: center;
+    }
+  }
+
   form {
     position: fixed;
 
@@ -194,25 +215,6 @@ main.index {
       left: 15px;
       box-shadow: 2px 4px 16px -7px grey;
     }
-
-    div.profile-button{
-        background-color: white;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        position: fixed;
-        bottom: 30px;
-        align-self: center;
-        box-shadow: 2px 4px 16px -7px grey;
-        display: flex;
-        justify-content: center;
-
-        a{
-            display: flex;
-            justify-content: center;
-            width: 50%;
-            align-self: center;
-        }
-    }
+  }
 }   
    

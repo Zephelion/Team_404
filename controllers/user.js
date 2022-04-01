@@ -123,7 +123,10 @@ module.exports = {
     fetch: fetchUsers,
     filtereduser: filteredUser,
     finduser: findUser,
-    like: like
+    like: like,
+    fetchOne:fetchOnesuser,
+    updateUser:updateOnesuser,
+    updateOne,updateOne,
 
 
 }

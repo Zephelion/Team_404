@@ -6,5 +6,9 @@ router.get('/', user.fetch);
 router.post('/filter', user.filtereduser);
 router.post('/getuser', user.finduser);
 
+router.get('/profile', user.fetchOne);
+router.get('/update', user.updateUser);
+router.post('/update', user.updateOne);
+
 
 module.exports = router;
