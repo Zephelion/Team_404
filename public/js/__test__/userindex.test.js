@@ -6,5 +6,6 @@ describe('User details in pop up', () => {
         const { fName } = popUpName.displayUsers('Russell');
 
         expect(fName).toEqual('Russell');
+        
     })
 })
