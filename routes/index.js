@@ -9,7 +9,7 @@ const multer = require("multer");
 const UserGoal = require('../models/UserGoal');
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../public/uploads") );
+    cb(null, path.join(__dirname, "/public") );
   },
   filename: function (req, file, callback) {
     callback(null, file.fieldname + "-" + Date.now() + file.originalname);
