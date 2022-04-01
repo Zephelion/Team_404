@@ -8,17 +8,30 @@ main.index {
 
   section.user-details {
     background-color: white;
-    width: 200px;
-    height: 200px;
+    width: 360px;
+    height: 240px;
     z-index: 100;
     position: fixed;
     top: 127px;
-    left: 106px;
+    left: 33px;
     border: 1px solid gray;
     display: block;
 
     &.appear {
       display: block;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    :first-of-type {
+      margin-top: 0.3em;
+    }
+
+    form {
+      width: 11em;
+      margin-left: 5.8em;
     }
   }
 
@@ -139,32 +152,25 @@ main.index {
       width: 50%;
       transform: rotate(90deg);
     }
+  }
 
+  form {
+    position: fixed;
+
+    input.logout-button {
+      background-image: url(https://i.postimg.cc/Bv0mGWjw/logout.png);
+      background-color: #0064fe;
+      color: transparent;
+      background-size: 70%;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 30px;
+      left: 15px;
+      box-shadow: 2px 4px 16px -7px grey;
+    }
   }
 }
-
-    form{
-        position: fixed;
-    
-        input.logout-button{
-            background-image: url(https://i.postimg.cc/Bv0mGWjw/logout.png);
-            background-color: #0064FE;
-            color: transparent;
-            background-size: 70%;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            position: fixed;
-            bottom: 30px;
-            left: 15px;
-            box-shadow: 2px 4px 16px -7px grey;
-        }
-    }
-}   
-
-
-
-
-   

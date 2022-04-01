@@ -27,6 +27,7 @@ const displayUsers = (data) =>{
 const displaySingleUser = (data) => {
     console.log(data);
 
+    // voeg uitknop toe
     let details = 
     `    <section class="user-details">
             <h2>${data.firstname}</h2>
@@ -90,3 +91,4 @@ users.forEach(user => {
     })
 })
 
+// maak eventListener voor uitknop (op userdetails.classlist)
