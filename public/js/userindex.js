@@ -6,7 +6,9 @@ const userContainer = document.querySelector('.user-container');
 const users = document.querySelectorAll('.user');
 const userDetails = document.querySelector('.user-details');
 const userIndex = document.querySelector('.index');
+const container = document.querySelector('.container');
 
+console.log(container);
 
 const displayUsers = (data) =>{
 
@@ -21,13 +23,13 @@ const displayUsers = (data) =>{
              </div>`
 
         userContainer.insertAdjacentHTML('beforeend', html);
+
     });
 }  
 
 const displaySingleUser = (data) => {
     console.log(data);
 
-    // voeg uitknop toe
     let details = 
     `    <section class="user-details">
             <h2>${data.firstname}</h2>
@@ -40,7 +42,8 @@ const displaySingleUser = (data) => {
                 <input type="submit" value="like">
             </form>
         </section>`
-    userIndex.insertAdjacentHTML('beforeend', details)
+    userIndex.insertAdjacentHTML('beforeend', details);
+    closePopUp.classList.add('button-appear');
 }
 
 const filterUsers = (e) =>{
@@ -91,4 +94,9 @@ users.forEach(user => {
     })
 })
 
-// maak eventListener voor uitknop (op userdetails.classlist)
+container.addEventListener('click', () => {
+
+    console.log(userDetails);
+    userDetails.classList.add('disappear');
+    console.log('nu moet iets geks gebeuren');
+})

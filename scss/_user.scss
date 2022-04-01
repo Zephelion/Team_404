@@ -14,24 +14,45 @@ main.index {
     position: fixed;
     top: 127px;
     left: 33px;
-    border: 1px solid gray;
+    box-shadow: 0px 1px 7px gray;
     display: block;
+    border-radius: 25px;
 
     &.appear {
       display: block;
     }
 
-    h2 {
-      text-align: center;
+    &.disappear {
+      display: none;
     }
 
-    :first-of-type {
-      margin-top: 0.3em;
+    h2 {
+      text-align: center;
+
+      :first-of-type {
+        margin-top: 0.3em;
+      }
     }
 
     form {
       width: 11em;
       margin-left: 5.8em;
+    }
+
+    input[type="button"].close {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      padding: 0.6em 0.8em;
+      background-color: #fff;
+      border: 1px solid gray;
+      color: #0064fe;
+      cursor: pointer;
+      display: none;
+
+      &.button-appear {
+        display: block;
+      }
     }
   }
 
