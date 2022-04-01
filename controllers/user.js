@@ -71,7 +71,7 @@ const like = async (req,res) => {
 
     UserLiked.save()
 
-
+    console.log("geliked");
 
     res.redirect('/users');
 
