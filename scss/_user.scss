@@ -13,10 +13,11 @@ main.index {
     z-index: 100;
     position: fixed;
     top: 127px;
-    left: 33px;
+    left: 15px;
     box-shadow: 0px 1px 7px gray;
     display: block;
     border-radius: 25px;
+    
 
     &.appear {
       display: block;
