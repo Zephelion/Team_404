@@ -1,5 +1,18 @@
 <main class="index">
 
+    {{!-- <input type="button" class="close" value="&#x2716"> --}}
+
+    {{!-- <section class="user-details">
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+        <form action="" method="post">
+
+            <input type="hidden" name="id" value="{{info.firstname}}">
+            <input type="submit" value="like">
+        </form>
+    </section> --}}
+
     <section class="filter-container">
         <form class="filter-form" action="/filteruser">
             <div class="goals">
@@ -17,7 +30,7 @@
     <section class="container">
         <section class="user-container">
             {{#each users}}
-                <div class="user">
+                <div class="user" data-id="{{_id}}">
                     <div class="user-img">
                         {{#if picture }}
                             <img src="/public/uploads/{{picture}}" alt="">
@@ -30,7 +43,7 @@
     </section>
 
     <div class="filter-button">
-        <img class="filter-icon" src="/public/assets/icons/filter.svg" alt="">
+        <img class="filter-icon" src="/public/assets/icons/filter.svg" alt="filter">
     </div>
 
     <div class="profile-button">
@@ -38,5 +51,8 @@
         <img class="profile-icon" src="/public/assets/icons/profile.svg" alt="">
         </a>
     </div>
+    <form action="/logout" method="post">
+        <input class="logout-button" type="submit"></input>
+    </form>
 </main>
 <script src="/public/js/userindex.js"></script>

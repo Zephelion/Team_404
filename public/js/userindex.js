@@ -1,8 +1,14 @@
+
 const filterBtn = document.querySelector('.filter-button');
 const sectionFilter = document.querySelector('.filter-container');
 const filterForm = document.querySelector('.filter-form');
 const userContainer = document.querySelector('.user-container');
+const users = document.querySelectorAll('.user');
+const userDetails = document.querySelector('.user-details');
+const userIndex = document.querySelector('.index');
+const container = document.querySelector('.container');
 
+console.log(container);
 
 const displayUsers = (data) =>{
 
@@ -17,8 +23,28 @@ const displayUsers = (data) =>{
              </div>`
 
         userContainer.insertAdjacentHTML('beforeend', html);
+
     });
 }  
+
+const displaySingleUser = (data) => {
+    console.log(data);
+
+    let details = 
+    `    <section class="user-details">
+            <h2>${data.firstname}</h2>
+            <h2>${data.lastname}</h2>
+            <h2>${data.age}</h2>
+
+            <form action="/like" method="post">
+
+                <input type="hidden" name="id" value="${data._id}">
+                <input type="submit" value="like">
+            </form>
+        </section>`
+    userIndex.insertAdjacentHTML('beforeend', details);
+    closePopUp.classList.add('button-appear');
+}
 
 const filterUsers = (e) =>{
     e.preventDefault();
@@ -28,10 +54,10 @@ const filterUsers = (e) =>{
 
     console.log(goals);
 
-    axios.post('/filteruser', {goals:goals})
+    axios.post('/users/filter', {goals:goals})
     .then(function (response) {
         // handle success
-        // console.log(response.data.user);
+        console.log(response.data);
         displayUsers(response.data);
 
         sectionFilter.classList.remove('filter-up');
@@ -52,3 +78,25 @@ filterBtn.addEventListener('click', () => {
 
 filterForm.addEventListener('submit', filterUsers);
 
+users.forEach(user => {
+    user.addEventListener('click', () =>{
+
+        const id = user.dataset.id;
+        axios.post('/users/getuser', {id:id})
+        .then(function (response) {
+            // handle success
+            displaySingleUser(response.data);
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+    })
+})
+
+container.addEventListener('click', () => {
+
+    console.log(userDetails);
+    userDetails.classList.add('disappear');
+    console.log('nu moet iets geks gebeuren');
+})
