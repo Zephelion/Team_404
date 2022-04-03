@@ -28,16 +28,16 @@
         <ul>
             <li>
                 <a href="https://github.com/Zephelion/Team_404/commit/34f1fc35867f557dc7556a49270eb82684e67e09" target="_blank">34f1fc3</a>
-            <li>
+            </li>
             <li>
                 <a href="https://github.com/Zephelion/Team_404/commit/9702a5b0bdf1432abdc12293375956f13085c7a8" target="_blank">9702a5b</a>
-            <li>
+            </li>
             <li>
                 <a href="https://github.com/Zephelion/Team_404/commit/586ef0f8d7c63de5afc6fdd2c77072cfd27f515f" target="_blank">586ef0f</a>
-            <li>
+            </li>
             <li>
                 <a href="https://github.com/Zephelion/Team_404/commit/f234ef5c46f71d56da6fc792f59b9ded5cdae2da" target="_blank">f234ef5</a>
-            <li>
+            </li>
         </ul>
 
 <h2>:gear:Building blocks</h2>
