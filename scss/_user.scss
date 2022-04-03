@@ -187,7 +187,8 @@ main.index {
     box-shadow: 2px 4px 16px -7px grey;
     display: flex;
     justify-content: center;
-    left: 160px;
+    left: 50%;
+    transform: translateX(-50%);
 
     a{
       display: flex;

@@ -20,10 +20,10 @@ router.use('/logout', logoutRoutes);
 
 
 
-//page not found
-// router.get("*", (req, res) => {
-//     res.send("Not found");
-// });
+// page not found
+router.get("*", (req, res) => {
+    res.send("Not found");
+});
 
 
 
