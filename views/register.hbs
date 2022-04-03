@@ -7,25 +7,28 @@
 
     <form action="/register/create" method="get" enctype="multipart/form-data">
         <label class="mobile-register" for="firstname">First name:</label><br>
-        <input type="text"  name="firstname" placeholder="First name" required><br>
+        <input type="text"  name="firstname" placeholder="First name"><br>
 
         <label class="mobile-register" for="lastname">Last name:</label><br>
-        <input type="text"  name="lastname" placeholder="Last name" required><br>
+        <input type="text"  name="lastname" placeholder="Last name"><br>
 
         <label class="mobile-register" for="age">Age:</label><br>
-        <input type="number" name="age" placeholder="age" required><br>
+        <input type="number" name="age" placeholder="age"><br>
 
         <label class="mobile-register" for="email">Email:</label><br>
-        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="email" name="email" placeholder="Email"><br>
 
         <label class="mobile-register" for="password">Password:</label><br>
-        <input type="password" name="password" placeholder="Password" required><br>
+        <input type="password" name="password" placeholder="Password"><br>
 
         <label class="mobile-register" for="confirmpassword">Confirm password:</label><br>
-        <input type="password" name="confirmpassword" placeholder="Confirm password" required><br>
+        <input type="password" name="confirmpassword" placeholder="Confirm password"><br>
 
 
         <input type="submit" value="Continue">
+
+        <label id="error"></label>
     </form> 
 
 </main>
+<script src="/public/js/check.js"></script>

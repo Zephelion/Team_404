@@ -17,5 +17,21 @@ main.register{
         font-weight: 400;
     }
 
+    #error {
+        display: block;
+        margin-top: 0.5em;
+    }
+    
+    .errormelding {
+        background-color: crimson;
+        border-radius: 0.5em;
+        color: white;
+        padding: 0.7em;
+        font-weight: 900;
+    }
+
+    .foute-input {
+        border: 1px solid red;
+    }
 
 }
