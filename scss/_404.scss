@@ -1,0 +1,36 @@
+body.errorpage {
+    background-color: $main-color;
+
+    section.errorsection {
+        background-color: white;
+        padding-bottom: 18em;
+        width: 100%;
+        border-radius: 57px 57px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        opacity: 1;
+        transition: 0.4s;
+        margin-top: 10em;
+
+        img.imgerror {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            margin-top: 5em;
+        }
+
+        h1.errortext {
+            color: black;
+            text-align: center;
+            margin-top: 2em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            color: #0064FE;
+            background-color: #E7F0FF;
+            padding: 1em;
+            border-radius: 10px;
+        }
+    }
+}
