@@ -11,7 +11,7 @@ const loggedUser = require('../middleware/authorization');
 
 
 
-router.use('/welcome',loggedUser.guest, homeRoutes);
+router.use('/', homeRoutes);
 router.use('/users', loggedUser.loggeduser, userRoutes);
 router.use('/register', registerRoutes);
 router.use('/login', loginRoutes);

@@ -86,17 +86,17 @@ const login = async (req,res) =>{
             }
         } else {
             console.error("Foute gebruikersnaam of wachtwoord")
-            res.redirect("/welcome")
+            res.redirect("/")
         }
     } catch (error) {
         console.error(error);
-        res.redirect("/welcome")
+        res.redirect("/")
     }
 }
 
 const logout = (req,res) => {
     req.session.destroy();
-    res.redirect('/welcome');
+    res.redirect('/');
 }
 
 //geef de user mee naar de volgende view om de data daar te kunnen gebruiken
