@@ -1,30 +1,37 @@
 const express = require('express');
-const res = require('express/lib/response');
 const router = express.Router();
-const user = require('../controllers/user');
+const homeRoutes = require('./home');
+const userRoutes = require('./users');
+const loginRoutes = require('./login');
+const registerRoutes = require('./register');
+const logoutRoutes = require('./logout');
+const likeRoutes = require('./likes');
+const goalRoutes = require('./goals');
+const loggedUser = require('../middleware/authorization');
 
 
-//Hier zet ik alle routes en zo zet ik ze weer naar een controller
-router.get('/', (req,res,) => {
 
-    res.render('start');
+router.use('/', homeRoutes);
+router.use('/users', loggedUser.loggeduser, userRoutes);
+router.use('/register', registerRoutes);
+router.use('/login', loginRoutes);
+router.use('/like', likeRoutes);
+router.use('/logout', logoutRoutes);
 
+
+
+// page not found
+router.get("*", (req, res) => {
+    // res.send("Not found");
+    res.render('404');
 });
 
-//hier import ik de usercontroller en de benodigde functies die ik daarin heb geschreven
-
-router.get('/users', user.fetch);
-
-router.get('/create', user.pass);
-
-router.get('/register', (req,res) => {
-    res.render('register');
-})
-
-router.get('/filter', user.filter);
 
 
-router.post('/register', user.store);
+
+
+// router.post('/register', user.register);
+
 
 
 module.exports = router;

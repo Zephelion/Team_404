@@ -14,13 +14,19 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+
+    picture:{
+        type:String
+    },
+
     email:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     password:{
         type:String,
-        required:true
+        // required:true
     }
 })
 

@@ -17,14 +17,22 @@ main.step{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 70px;
+        gap: 30px;
 
         h1{
-            font-family: 'Segoe UI';
             font-weight: 400;
             font-size: 2em;
             text-align: center;
         }
+
+        h2{
+            font-family: 'Segoe UI';
+            font-weight: 400;
+            font-size: 1em;
+            text-align: center;
+            color: gray;
+        }
+
         div.button-container{
             display: flex;
             justify-content: center;
@@ -32,7 +40,7 @@ main.step{
             
             form{
 
-                display: flex;
+                // display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 width: 90%;
@@ -52,7 +60,6 @@ main.step{
                     border-radius:10px;
                     padding: 15px;
 
-                    font-family: 'Segoe UI';
                     flex-grow: 1;
                     display: flex;
                     align-items: center;
@@ -92,10 +99,6 @@ main.step{
                         font-size: 1.2em;
                         min-width: 123px;
                         border-radius: 9px;
-                    }
-
-                    label{
-                        font-family: 'Segoe UI';
                     }
 
                 }

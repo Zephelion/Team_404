@@ -1,0 +1,98 @@
+main.profile{
+
+    a.back{
+        img{
+            width: 12%;
+            margin: 17px;
+        }
+    }
+
+    background: $main-color;
+    // background: linear-gradient(153deg, rgba(255,255,255,1) 44%, rgba(0,100,254,1) 44%);
+    height: 100vh;
+
+
+    section.details-container{
+        background-color: #f7f7f7;
+        height: 70%;
+        border-radius: 57px 57px 0px 0px;
+
+        div.details{
+            padding: 31px;
+
+            div.details-container-information{
+                background: white;
+                width: 100%;
+                height: 87px;
+                margin-top: 20px;
+                border-radius: 13px;
+                box-shadow: 0px 1px 4px -2px grey;
+                overflow: hidden; 
+
+                h3{
+                    font-size: 1.3em;
+                    margin: 17px;
+                    margin-top: 13px;
+                }
+
+                p{
+                    font-size:20px;
+                    margin: 16px;
+                }
+            }
+        }
+    }
+
+    section.container{
+
+        a.edit-button{
+            position: absolute;
+            top: 241px;
+            right: 52px;
+
+            button{
+
+                border: none;
+                outline: none;
+                background-color: $secondary-color;
+                width: 80px;
+                img{
+                    width: 50%;
+                }
+            }
+        }
+
+        section.profile-container{
+            div.user{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                div.profile-img{
+                    background: black;
+                    height: 200px;
+                    width: 200px;
+                    border-radius: 50%;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: inherit;
+                    }
+                }
+
+                div.welcome{
+                    width: 300px;
+                    margin: 10px;
+                    h2{
+                        text-align: center;
+                        color: white;
+                    }
+                }
+
+            }
+        }
+    }
+}

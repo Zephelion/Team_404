@@ -1,0 +1,55 @@
+<main class="profile">
+    <a class="back" href="/users"> 
+      <img class="icon" src="/public/assets/icons/backwhite.svg" alt="">
+    </a>
+
+<section class="container">
+
+  <section class="profile-container">
+
+    <div class="user">
+
+        <div class="profile-img">
+            {{#if picture }}
+            <img src="/public/uploads/{{picture}}" alt="profile picture">
+            {{/if}}
+        </div>
+
+        <div class="welcome">
+          <h2>Hello {{firstname}} welcome to your profile!</h2>
+        </div>
+    </div>
+  </section>
+
+<a class="edit-button" href="/users/update">
+  <button>
+    <img src="/public/assets/icons/edit.svg" alt="">
+  </button>
+
+</a>
+</section>
+<section class="details-container">
+  <div class="details">
+    <h2>Information</h2>
+
+    <div class="details-container-information">
+      <h3>Firstname</h3>
+      <p>{{firstname}}</p>
+    </div>
+    <div class="details-container-information">
+      <h3>Lastname</h3>
+      <p>{{lastname}}</p>
+    </div>
+    <div class="details-container-information">
+      <h3>Email</h3>
+      <p>{{email}}</p>
+    </div>
+    <div class="details-container-information">
+      <h3>Email</h3>
+      <p>{{age}}</p>
+    </div>
+  </div>
+
+</section>
+
+</main>
