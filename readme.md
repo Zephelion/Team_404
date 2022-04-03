@@ -1,18 +1,30 @@
-<h1>Project Tech Fitbud Matching Application</h1>
+<section align="center" id="start"><img alt="logo" src="https://i.postimg.cc/W4g1xtX3/fitness.png" width="300"></section>
+
+<section align="center">
+  <a href="https://github.com/Zephelion/Team_404/issues" target="_blank"><img alt="Issues" src="https://img.shields.io/github/issues/Zephelion/Team_404"></a>
+  <a href="https://github.com/Zephelion/Team_404/network" target="_blank"><img alt="Forks" src="https://img.shields.io/github/forks/DaanDH12/TechRepo"></a>
+  <a href="https://github.com/Zephelion/Team_404/stargazers" target="_blank"><img alt="Stars" src="https://img.shields.io/github/stars/Zephelion/Team_404"></a>
+  <a href="https://github.com/Zephelion/Team_404/blob/main/LICENSE" target="_blank"><img alt="License" src="https://img.shields.io/github/license/Zephelion/Team_404"></a>
+</section>
+
 <h2>About fitbud</h2>
 <p>Fitbud is a matching application where sport lovers can come together and train with each other. The application makes it very easy for users with similiar fitness background or goals to come together and have an effective train session</p>
-<p>please view in mobile size:)</p>
+<p>please view in mobile size📱</p>
+
+ <section align="center" id="start"><img alt="logo" src="https://i.postimg.cc/zDF6bw2S/localhost-3000-i-Phone-XR-1-iphone13blue-portrait.png" width="300">
+ <img alt="logo" src="https://i.postimg.cc/YqXP8rHv/localhost-3000-register-i-Phone-XR-iphone13blue-portrait.png" width="300"></section>
+
 <h2>Chosen Feature</h2>
 <p>In this application we will be combining all of the chosen features from different collaborators</p>
 <ul>
     <li>Filter feature <a href="https://github.com/Laserjonge" target="_blank">Axel de ruiter</a></li>
     <li>Like feature <a href="https://github.com/svendoejaaren" target="_blank">Sven doejaaren</a></li>
-    <li>Login feature <a href="https://github.com/DaanDH12" target="_blank">Daan Honing</a></li>
+    <li>Login/Logout feature <a href="https://github.com/DaanDH12" target="_blank">Daan Honing</a></li>
     <li>Update feature <a href="https://github.com/EvaZ7" target="_blank">Eva Zaadnoordijk</a></li>
     <li>Registration feature <a href="https://github.com/Zephelion" target="_blank">Me</a> </li>
 </ul>
 <h2>:gear:Building blocks</h2>
-<p>For building the chosen feature i will be using the following techniques</p>
+<p>For building the chosen feature we will be using the following techniques</p>
 <ul>
     <li>HTML</li>
     <li>Css</li>
