@@ -15,15 +15,15 @@ const urlEncoded = bodyParser.urlencoded({ extended: true })
 
 
 app.use(bodyParser.json());
-app.use(session({
+// app.use(session({
 
-    secret: process.env.SESSION_SECRET,
+//     secret: process.env.SESSION_SECRET,
   
-    resave: false,
+//     resave: false,
   
-    saveUninitialized: true
+//     saveUninitialized: true
   
-}))
+// }))
 
 app.engine('hbs', engine({
     extname: "hbs",
