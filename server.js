@@ -4,13 +4,13 @@ require('dotenv').config()
 
 const app = express();
 const port = 3000;
-const connectDB = require('./config/db');
+// const connectDB = require('./config/db');
 const bodyParser = require('body-parser');
 const routes = require("./routes");
 const session = require('express-session');
 const path = require('path');
 
-connectDB();
+// connectDB();
 const urlEncoded = bodyParser.urlencoded({ extended: true })
 
 
