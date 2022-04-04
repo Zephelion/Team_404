@@ -69,6 +69,21 @@
                 <a href="https://github.com/Zephelion/Team_404/commit/3f9caee1c55840a8d9aa570ec215e9df72339546" target="_blank">3f9caee</a>
             </li>
         </ul>
+    <h3>Eva Zaadnoordijk</h3>
+        <ul>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/6e79a45a8df5d8a87b8ab5080a0fbc9c104e718f" target="_blank">6e79a45</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/3c7e6d10cf9c1e2d697b56aa606d449780493c9d" target="_blank">3c7e6d1</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/13c91398520a3b5bf27e5d8a6e3aac2b9b58184a" target="_blank">13c9139</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/44bcd21489755f33259f1a49168ce55a47c700dd" target="_blank">44bcd21</a>
+            </li>
+        </ul>
 
 <h2>:gear:Building blocks</h2>
 <p>For building the chosen feature we will be using the following techniques</p>
