@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "scss": "node-sass --watch scss/app.scss -o public/css --output-style compressed"
+    "scss": "node-sass --watch scss/app.scss -o public/css --output-style compressed",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
