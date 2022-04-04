@@ -3,130 +3,130 @@ const Goals = require('../models/Goal');
 const UserGoals = require('../models/UserGoal');
 const UserLike = require('../models/UserLike');
 
-const fetchUsers = async (req,res) =>{
+// const fetchUsers = async (req,res) =>{
 
 
-    const goals = await Goals.find().lean();
+//     const goals = await Goals.find().lean();
 
-    User.find().lean().then(users => {
+//     User.find().lean().then(users => {
 
-        // console.log(users);
-        res.render('filter', {
-            users:users,
-            goals:goals,
-        })
-    })
+//         // console.log(users);
+//         res.render('filter', {
+//             users:users,
+//             goals:goals,
+//         })
+//     })
 
-}
+// }
 
-const filteredUser = async (req,res) => {
+// const filteredUser = async (req,res) => {
 
-    // console.log(req.body);
+//     // console.log(req.body);
 
-    const goal = req.body.goals;
+//     const goal = req.body.goals;
     
-    UserGoals.find({goals: goal}).populate('user').lean().then(usergoal => {
+//     UserGoals.find({goals: goal}).populate('user').lean().then(usergoal => {
 
-        res.send(usergoal);
-    })
+//         res.send(usergoal);
+//     })
 
-}
-
-
-const findUser = (req,res) => {
-
-    const id = req.body.id;
-
-    User.findOne({_id: id}).then(user => {
-        res.send(user)
-    })
-}
-
-const like = async (req,res) => {
-
-    //pak de user zijn user id uit de client side
-    const likedUser = req.body.id;
+// }
 
 
-    //pak de ingelogde gebruiker uit de sessie
-    session = req.session
+// const findUser = (req,res) => {
 
-    //zoek de user in de database
-    const loggedUser = await User.findOne({email: session.email}).lean();
+//     const id = req.body.id;
 
-    const loggedUserId = loggedUser._id
+//     User.findOne({_id: id}).then(user => {
+//         res.send(user)
+//     })
+// }
 
-    console.log(loggedUserId);
+// const like = async (req,res) => {
 
-    //sla de like op in de database
-    const UserLiked = new UserLike({
+//     //pak de user zijn user id uit de client side
+//     const likedUser = req.body.id;
 
-        user: loggedUserId,
 
-        liked_user: likedUser,
+//     //pak de ingelogde gebruiker uit de sessie
+//     session = req.session
 
-    })
+//     //zoek de user in de database
+//     const loggedUser = await User.findOne({email: session.email}).lean();
 
-    // console.log(UserLiked);
+//     const loggedUserId = loggedUser._id
 
-    UserLiked.save()
+//     console.log(loggedUserId);
 
-    console.log("geliked");
+//     //sla de like op in de database
+//     const UserLiked = new UserLike({
 
-    res.redirect('/users');
+//         user: loggedUserId,
 
-}
+//         liked_user: likedUser,
 
-//add user to profile
-const fetchOnesuser = async (req,res) =>{
+//     })
 
-    const userData = await User.findOne(req.session).lean();
-    //console.log(userData);
+//     // console.log(UserLiked);
 
-    res.render("profile", userData);
-}
+//     UserLiked.save()
 
-const updateOnesuser = async (req,res) =>{
+//     console.log("geliked");
 
-    const userData = await User.findOne(req.session).lean();
-    //console.log(userData);
+//     res.redirect('/users');
 
-    res.render("update", userData);
-}
+// }
 
-//update functie
-const updateOne = async (req,res) =>{
-     try {
-        const filter = (req.session);
+// //add user to profile
+// const fetchOnesuser = async (req,res) =>{
 
-        const update = {
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        age: req.body.age,
-        email: req.body.email
-        };
+//     const userData = await User.findOne(req.session).lean();
+//     //console.log(userData);
 
-         await User.findOneAndUpdate(filter, update).lean(); 
+//     res.render("profile", userData);
+// }
 
-         const userData = await User.findOne(req.session).lean();
-         //console.log(userData);
+// const updateOnesuser = async (req,res) =>{
+
+//     const userData = await User.findOne(req.session).lean();
+//     //console.log(userData);
+
+//     res.render("update", userData);
+// }
+
+// //update functie
+// const updateOne = async (req,res) =>{
+//      try {
+//         const filter = (req.session);
+
+//         const update = {
+//         firstname: req.body.firstname,
+//         lastname: req.body.lastname,
+//         age: req.body.age,
+//         email: req.body.email
+//         };
+
+//          await User.findOneAndUpdate(filter, update).lean(); 
+
+//          const userData = await User.findOne(req.session).lean();
+//          //console.log(userData);
      
-         res.render("profile", userData);
+//          res.render("profile", userData);
 
-    } catch (error) {
-        throw new Error("Profile not updated");
-    }
-}
+//     } catch (error) {
+//         throw new Error("Profile not updated");
+//     }
+// }
 
-module.exports = {
+// module.exports = {
 
-    fetch: fetchUsers,
-    filtereduser: filteredUser,
-    finduser: findUser,
-    like: like,
-    fetchOne:fetchOnesuser,
-    updateUser:updateOnesuser,
-    updateOne,updateOne,
+//     fetch: fetchUsers,
+//     filtereduser: filteredUser,
+//     finduser: findUser,
+//     like: like,
+//     fetchOne:fetchOnesuser,
+//     updateUser:updateOnesuser,
+//     updateOne,updateOne,
 
 
-}
+// }
