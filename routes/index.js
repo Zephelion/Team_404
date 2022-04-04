@@ -12,11 +12,11 @@ const loggedUser = require('../middleware/authorization');
 
 
 router.use('/', homeRoutes);
-router.use('/users', loggedUser.loggeduser, userRoutes);
-router.use('/register', registerRoutes);
-router.use('/login', loginRoutes);
-router.use('/like', likeRoutes);
-router.use('/logout', logoutRoutes);
+// router.use('/users', loggedUser.loggeduser, userRoutes);
+// router.use('/register', registerRoutes);
+// router.use('/login', loginRoutes);
+// router.use('/like', likeRoutes);
+// router.use('/logout', logoutRoutes);
 
 
 
