@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
+const connectionString = `mongodb+srv://Zephelion:${process.env.DB_PASSWORD}@fitbud.uuwn8.mongodb.net/Fitbud?retryWrites=true&w=majority`;
+
 const connectDB = () =>{
     try{
-        mongoose.connect(process.env.CONNECTION_STRING, {
+        mongoose.connect(connectionString, {
             useNewUrlParser: true,
             useUnifiedTopology:true,
         });
