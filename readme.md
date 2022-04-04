@@ -57,6 +57,51 @@
                 <a href="https://github.com/Zephelion/Team_404/commit/9794860577a99ee5a01301493c859c71414cd583?diff=unified" target="_blank">9794860</a>
             </li>
         </ul>
+    <h3>Sven Doejaaren</h3>
+        <ul>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/3ba4f83fdba192300e586252691452d96d33769e" target="_blank">3ba4f83</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/0b1b4b513c008fc02b978d11af364bbe48f7d0f4" target="_blank">0b1b4b5</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/8d98060799b09a4df7e15a511b668861d878e97e" target="_blank">8d98060</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/3f9caee1c55840a8d9aa570ec215e9df72339546" target="_blank">3f9caee</a>
+            </li>
+        </ul>
+    <h3>Eva Zaadnoordijk</h3>
+        <ul>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/6e79a45a8df5d8a87b8ab5080a0fbc9c104e718f" target="_blank">6e79a45</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/3c7e6d10cf9c1e2d697b56aa606d449780493c9d" target="_blank">3c7e6d1</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/13c91398520a3b5bf27e5d8a6e3aac2b9b58184a" target="_blank">13c9139</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/44bcd21489755f33259f1a49168ce55a47c700dd" target="_blank">44bcd21</a>
+            </li>
+        </ul>
+    <h3>Axel de Ruiter</h3>
+        <ul>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/47824ef36fcb9f967d689aa3962f3e4ab7e759b9" target="_blank">47824ef</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/85032e205d49a8c7b6d3fb347489de3460c18f1e" target="_blank">85032e2</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/47824ef36fcb9f967d689aa3962f3e4ab7e759b9" target="_blank">47824ef</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/cfdf3772da007b99a29b82ab08b5042c3a32f057" target="_blank">cfdf377</a>
+            </li>
+        </ul>
 
 <h2>:gear:Building blocks</h2>
 <p>For building the chosen feature we will be using the following techniques</p>
@@ -85,6 +130,7 @@ DB_PASSWORD = <password>
 CONNECTION_STRING = <database connection string>
 
 ```
+
 <h3>Packages</h3>
 <p>Now you need to run the command below</p>
 
@@ -102,6 +148,7 @@ npm install
 ```
 npm run dev
 ```
+
 <h3>Disclaimer</h3>
 <p>
     <strong>Please view the application in mobile size</strong> the app is not intended voor deskstop view or else it will look not as good :-1:
