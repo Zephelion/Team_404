@@ -54,6 +54,21 @@
                 <a href="https://github.com/Zephelion/Team_404/commit/9794860577a99ee5a01301493c859c71414cd583?diff=unified" target="_blank">9794860</a>
             </li>
         </ul>
+    <h3>Sven Doejaaren</h3>
+        <ul>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/3ba4f83fdba192300e586252691452d96d33769e" target="_blank">3ba4f83</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/0b1b4b513c008fc02b978d11af364bbe48f7d0f4" target="_blank">0b1b4b5</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/8d98060799b09a4df7e15a511b668861d878e97e" target="_blank">8d98060</a>
+            </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/3f9caee1c55840a8d9aa570ec215e9df72339546" target="_blank">3f9caee</a>
+            </li>
+        </ul>
 
 <h2>:gear:Building blocks</h2>
 <p>For building the chosen feature we will be using the following techniques</p>
@@ -82,6 +97,7 @@ DB_PASSWORD = <password>
 CONNECTION_STRING = <database connection string>
 
 ```
+
 <h3>Packages</h3>
 <p>Now you need to run the command below</p>
 
@@ -99,6 +115,7 @@ npm install
 ```
 npm run dev
 ```
+
 <h3>Disclaimer</h3>
 <p>
     <strong>Please view the application in mobile size</strong> the app is not intended voor deskstop view or else it will look not as good :-1:
