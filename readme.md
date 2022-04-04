@@ -41,6 +41,9 @@
             <li>
                 <a href="https://github.com/Zephelion/Team_404/commit/ccee81e79a66e43206c1029c07bb7588e1e21610" target="_blank">ccee81e7</a>
             </li>
+            <li>
+                <a href="https://github.com/Zephelion/Team_404/commit/818e369a67959ecb6808e33cf7597514dfd84579" target="_blank">818e369a</a>
+            </li>
         </ul>
     <h3>Daan Honing</h3>
         <ul>
